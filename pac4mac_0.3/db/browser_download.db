@@ -1,0 +1,6 @@
+[COPY_FILE_USER_PROFILE][DOWNLOADS_FIREFOX]/Users/<USER>/Library/Application Support/Firefox/Profiles/<USERPROFILE>.default/downloads.sqlite
+[COPY_FILE_USER][DOWNLOADS_CHROME]/Users/<USER>/Library/Application Support/Google/Chrome/Default/History
+[COPY_FILE_USER][DOWNLOADS_SAFARI]/Users/<USER>/Library/Safari/Downloads.plist
+[COPY_FILE_USER][DOWNLOADS_OPERA]/Users/<USER>/Library/Opera/download.dat
+[COPY_FILE_USER][DOWNLOADS_OPERA]/Users/<USER>/Library/Application Support/com.operasoftware.Opera/History
+[COPY_FILE_USER][DOWNLOADS_BROWSER]/Users/<USER>/Path/database.db

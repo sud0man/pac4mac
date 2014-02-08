@@ -1,0 +1,7 @@
+[COPY_FILE_USER_PROFILE][COOKIES_FIREFOX]/Users/<USER>/Library/Application Support/Firefox/Profiles/<USERPROFILE>.default/cookies.sqlite
+[COPY_FILE_USER][COOKIES_CHROME]/Users/<USER>/Library/Application Support/Google/Chrome/Default/Cookies
+[COPY_FILE_USER][COOKIES_SAFARI]/Users/<USER>/Library/Cookies/Cookies.plist
+[COPY_FILE_USER][COOKIES_SAFARI]/Users/<USER>/Library/Cookies/Cookies.binarycookies
+[COPY_FILE_USER][COOKIES_OPERA]/Users/<USER>/Library/Opera/cookies4.dat
+[COPY_FILE_USER][COOKIES_OPERA]/Users/<USER>/Library/Application Support/com.operasoftware.Opera/Cookies
+[COPY_FILE_USER][COOKIES_BROWSER]/Users/<USER>/Path/database.db

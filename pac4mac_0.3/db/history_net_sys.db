@@ -1,0 +1,23 @@
+
+#History network
+[PLIST][History_Bluetooth]/Library/Preferences/com.apple.Bluetooth.plist
+[PLIST][History_Network]/Library/Preferences/SystemConfiguration/com.apple.network.identification.plist
+[CMD][History_wifi_AP]defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences|sed 's|\./|`pwd`/|g' | sed 's|.plist||g'|grep 'LastConnected' -A 3
+[COPY_FILE][History_RemoteDesktop]/Library/Preferences/com.apple.RemoteDesktop.plist
+[COPY_DIR_USER][History_WebpagePreview]/Users/<USER>/Library/Caches/com.apple.Safari/Webpage Previews/
+
+#History system
+[PLIST_USER][History_ConsoleSearch]/Users/<USER>/Library/Preferences/com.apple.Console.plist
+[COPY_FILE_USER][History_SQLiteHistory]/Users/<USER>/.sqlite_history
+[COPY_FILE_USER][History_Bash]/Users/<USER>/.bash_history
+[COPY_FILE_USER][History_sh]/Users/<USER>/.sh_history
+[CMD][History_Console_last]last
+[COPY_FILE_USER][History_Connected_Media]/Users/<USER>/Library/Preferences/com.apple.sidebarlists.plist
+
+#History LSQuarantine
+[CMD_USER][QuarantineEvents_Chrome]sqlite3 /Users/<USER>/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineTimestamp,LSQuarantineAgentName,LSQuarantineDataURLString from LSQuarantineEvent where LSQuarantineAgentName like "%chrome%"' | sort -u
+[CMD_USER][QuarantineEvents_Safari.app]sqlite3 /Users/<USER>/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineTimestamp,LSQuarantineAgentName,LSQuarantineDataURLString from LSQuarantineEvent where LSQuarantineAgentName like "%safari%"' | sort -u
+[CMD_USER][QuarantineEvents_Firefox.app]sqlite3 /Users/<USER>/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineTimestamp,LSQuarantineAgentName,LSQuarantineDataURLString from LSQuarantineEvent where LSQuarantineAgentName like "%firefox%"' | sort -u
+[CMD_USER][QuarantineEvents_Opera.app]sqlite3 /Users/<USER>/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineTimestamp,LSQuarantineAgentName,LSQuarantineDataURLString from LSQuarantineEvent where LSQuarantineAgentName like "%opera%"' | sort -u
+[CMD_USER][QuarantineEvents_iChat.app]sqlite3 /Users/<USER>/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineTimestamp,LSQuarantineAgentName,LSQuarantineDataURLString from LSQuarantineEvent where LSQuarantineAgentName like "%ichat%"' | sort -u
+[CMD_USER][QuarantineEvents_XX.app]sqlite3 /Users/<USER>/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'select LSQuarantineTimestamp,LSQuarantineAgentName,LSQuarantineDataURLString from LSQuarantineEvent where LSQuarantineAgentName not like "%chrome%" and LSQuarantineAgentName not like "%safari%" and LSQuarantineAgentName not like "%opera%" and LSQuarantineAgentName not like "%firefox%" and LSQuarantineAgentName not like "%mail%" and LSQuarantineAgentName not like "%ichat%"' | sort -u

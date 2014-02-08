@@ -1,0 +1,18 @@
+#! /usr/sbin/dtrace -s
+
+/* this is the same as PE_state.dtrace, except that it outputs only the raw numeric value.
+ * the value should be used in "sysctl -w debug.devmem.boot_args=..."
+ */
+
+#pragma D option quiet
+
+BEGIN
+{
+    self->inited = 1;
+
+    self->kgm_boot_args = ((struct boot_args*)(`PE_state).bootArgs);
+    printf("%lld", (long long) self->kgm_boot_args);
+
+    exit(0);
+
+}

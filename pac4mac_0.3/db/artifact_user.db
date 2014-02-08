@@ -1,0 +1,18 @@
+#Recent searches, Trash setting, view settings, recent folders
+[PLIST_USER][Recents_Activities]/Users/<USER>/Library/Preferences/com.apple.finder.plist
+
+#Applications in the Dock
+[PLIST_USER][App_In_Dock]/Users/<USER>/Library/Preferences/com.apple.dock.plist
+
+#folders and network shares in the Dock
+[PLIST_USER][Folders_In_Dock]/Users/<USER>/Library/Preferences/com.apple.dock.plist
+
+#Desktop picture
+[PLIST_USER][Desktop_Pictures]/Users/<USER>/Library/Preferences/com.apple.desktop.plist
+
+#recent documents, applications, and network connections
+[PLIST_USER][Recents_DOC_APP_NET]/Users/<USER>/Library/Preferences/com.apple.recentitems.plist 
+
+#Preview files
+[PLIST_USER][Preview_Documents]/Users/<USER>/Library/Preferences/com.apple.Preview.LSSharedFileList.plist
+

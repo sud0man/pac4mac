@@ -1,0 +1,6 @@
+[COPY_FILE_USER_PROFILE][PLACES_FIREFOX]/Users/<USER>/Library/Application Support/Firefox/Profiles/<USERPROFILE>.default/places.sqlite
+[COPY_FILE_USER][PLACES_CHROME]/Users/<USER>/Library/Application Support/Google/Chrome/Default/History
+[COPY_FILE_USER][PLACES_SAFARI]/Users/<USER>/Library/Safari/History.plist
+[COPY_FILE_USER][PLACES_OPERA]/Users/<USER>/Library/Opera/global_history.dat
+[COPY_FILE_USER][PLACES_OPERA]/Users/<USER>/Library/Application Support/com.operasoftware.Opera/History
+[COPY_FILE_USER][PLACES_BROWSER]/Users/<USER>/Path/database.db

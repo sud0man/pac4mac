@@ -1,0 +1,14 @@
+[CMD_USER][Malware_Flashback]stat /Users/<USER>/Library/LaunchAgents/com.java.update.plist
+[PLIST_USER][Malware_Flashback]/Users/<USER>/Library/LaunchAgents/com.java.update.plist
+
+[CMD_USER][Malware_Imuler]stat /Users/<USER>/Library/LaunchAgents/checkvir.plist
+[PLIST_USER][Malware_Imuler]/Users/<USER>/Library/LaunchAgents/checkvir.plist
+
+[CMD_USER][Malware_SabPub]stat /Users/<USER>/Library/LaunchAgents/com.apple.PubSabAgent.plist
+[PLIST_USER][Malware_SabPub]/Users/<USER>/Library/LaunchAgents/com.apple.PubSabAgent.plist
+
+[CMD_USER][Malware_Mac_Control]stat /Users/<USER>/Library/LaunchAgents/com.apple.FolderActionsxl.plist
+[PLIST_USER][Malware_Mac_Control]/Users/<USER>/Library/LaunchAgents/com.apple.FolderActionsxl.plist
+
+[CMD][Malware_logKext]stat /Library/LaunchDaemons/logKext.plist
+[PLIST][Malware_logKext]/Library/LaunchDaemons/logKext.plist

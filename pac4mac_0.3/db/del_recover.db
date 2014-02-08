@@ -1,0 +1,7 @@
+#Trashes
+[CMD][Trashes_System]ls -Rhl /.Trashes
+[CMD_USER][Trash_User]ls -Rhl /Users/<USER>/.Trash
+
+
+#recovered office document
+[COPY_DIR_USER][RECOVERY_OFFICE]/Users/<USER>/Library/Application Support/Microsoft/Office/Office 2011 AutoRecovery

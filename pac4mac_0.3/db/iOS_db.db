@@ -1,0 +1,6 @@
+[COPY_DIR][IOS_DEVICES]/private/var/db/lockdown/
+[COPY_FILE_USER_PROFILE][IOS_INFO_PLIST]/Users/<USER>/Library/Application Support/MobileSync/Backup/<USERPROFILE>/Info.plist
+[COPY_FILE_USER_PROFILE][IOS_SMS]/Users/<USER>/Library/Application Support/MobileSync/Backup/<USERPROFILE>/3d0d7e5fb2ce288813306e4d4636395e047a3d28
+[COPY_FILE_USER_PROFILE][IOS_CALENDAR]/Users/<USER>/Library/Application Support/MobileSync/Backup/<USERPROFILE>/2041457d5fe04d39d0ab481178355df6781e6858
+[COPY_FILE_USER_PROFILE][IOS_CALL]/Users/<USER>/Library/Application Support/MobileSync/Backup/<USERPROFILE>/ff1324e6b949111b2fb449ecddb50c89c3699a78
+[COPY_FILE_USER_PROFILE][IOS_ADDRESS_BOOK]/Users/<USER>/Library/Application Support/MobileSync/Backup/<USERPROFILE>/31bb7ba8914766d4ba40d6dfb6113c8b614be442

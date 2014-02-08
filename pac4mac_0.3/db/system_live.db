@@ -1,0 +1,38 @@
+[CMD][Console_who]w
+
+[CMD][sys_profil]System_profiler
+
+[CMD][users]/usr/bin/dscacheutil -q user|grep -B 5 'bash'|grep name | cut -c '7-'
+[CMD][users_ADMIN]/usr/bin/dscl . -read /Groups/admin | grep 'GroupMembership:' | cut -c '18-' | sed '/root / s///'
+
+[CMD][netstat_ALL]netstat -an
+[CMD][Lsof_ACK]lsof -i | grep ESTABLISHED
+
+[CMD_USER][lsof_by_user]lsof -u <USER>
+[CMD][lsof_for_root]lsof -u root
+
+[CMD][KERNEL_STATE]sysctl -A
+
+[CMD][LAUNCHD]launchctl list
+
+[CMD][ps_all]ps -o user,pid,ppid,command -ax
+
+[PLIST][network_firewall]/Library/Preferences/com.apple.alf.plist
+[PLIST][network_wireless]/Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist
+[PLIST][network_nat]/Library/Preferences/SystemConfiguration/com.apple.nat.plist
+[PLIST][network_smb]/Library/Preferences/SystemConfiguration/com.apple.smb.server.plist
+[PLIST][network_int_10.8]/Library/Preferences/SystemConfiguration/NetworkInterfaces.plist
+[PLIST][network_int]/Library/Preferences/SystemConfiguration/com.apple.NetworkInterfaces.plist
+[PLIST][network_int2]/Library/Preferences/SystemConfiguration/com.apple.preferences.plist
+[PLIST][network_int_conf]/Library/Preferences/SystemConfiguration/preferences.plist
+
+[CMD][Crontab_ROOT]crontab -u root -l
+[CMD_USER][Crontab_USER]crontab -u <USER> -l
+
+[CMD][Drivers_ALL]kextstat
+
+[XXX][Bit_SUID_GUID]find / -type f \( -perm -004000 -o -perm -002000 \) -exec ls -lg {} \; 
+[XXX][Files100M]find / -size +100000k -exec ls -lh {} \;
+[XXX][xattr_files]find / -type f -print -exec xattr {} \;
+
+

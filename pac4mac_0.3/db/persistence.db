@@ -1,0 +1,40 @@
+[CMD][Launched_XPC_APPLI]find /Applications/ -name XPCServices -exec ls -lsct {} \;
+
+[CMD][Launched_XPC_SYS]stat /System/Library/XPCServices/*
+[COPY_DIR][Launched_XPC_SYS]/System/Library/XPCServices/
+
+[CMD][Launched_Agents_SYS]stat /System/Library/LaunchAgents/*
+[COPY_DIR][Launched_Agents_SYS]/System/Library/LaunchAgents/
+
+[CMD][Launched__Agents_LIB]stat /Library/LaunchAgents/*
+[COPY_DIR][Launched__Agents_LIB]/Library/LaunchAgents/
+
+[CMD][Launched_Daemons_SYS]stat /System/Library/LaunchDaemons/*
+[COPY_DIR][Launched_Daemons_SYS]/System/Library/LaunchDaemons/
+
+[CMD][Launched_Daemons_LIB]stat /Library/LaunchDaemons/*
+[COPY_DIR][Launched_Daemons_LIB]/Library/LaunchDaemons/
+
+[CMD_USER][Launched_LoginItems_USER]stat /Users/<USER>/Library/Preferences/com.apple.loginitems.plist
+[COPY_DIR][Launched_LoginItems_USER]/Users/<USER>/Library/Preferences/com.apple.loginitems.plist
+
+[CMD][Launched_LoginItems_APP]find /Applications/ -name LoginItems -exec ls -lsct {} \;
+
+[CMD][ScriptingAdditions]stat /System/Library/ScriptingAdditions/*
+[COPY_DIR][ScriptingAdditions]/System/Library/ScriptingAdditions/
+
+[CMD][ScriptingAdditions2]stat /Library/ScriptingAdditions/*
+[COPY_DIR][ScriptingAdditions2]/Library/ScriptingAdditions/
+
+[CMD][Launchd_DB]stat /private/var/db/launchd.db/*
+[COPY_DIR][Launchd_DB]/private/var/db/launchd.db/
+
+[CMD][Drivers_ALL]kextstat
+
+[CMD][Extensions_DIR]stat /System/Library/Extensions/*
+[CMD][Extensions_DIR2]stat /Extra/Extensions/*
+[COPY_DIR][Extensions.KextCache]/System/Library/Extensions/Extensions.kexstat/
+[COPY_FILE][Extensions_installed_cache]/System/Library/Extensions/Extensions.mkext
+
+[CMD][Crontab_ROOT]crontab -u root -l
+[CMD_USER][Crontab_USER]crontab -u <USER> -l

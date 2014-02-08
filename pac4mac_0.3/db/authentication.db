@@ -1,0 +1,15 @@
+#User and Passwords
+[PLIST_USER][Hashes_10.7_8]/private/var/db/dslocal/nodes/Default/users/<USER>.plist
+[COPY_DIR][Hashes_10.6]/var/db/shadow/hash/
+[COPY_FILE][AutoLogon_Kcpassword]/private/etc/kcpassword
+[PLIST][Deleted_Users]/Library/Preferences/com.apple.preferences.accounts.plist
+[PLIST][Last_User]/Library/Preferences/com.apple.loginwindow.plist
+
+#Last Login Info + Hint master password + autologin user
+[PLIST][Last_Login]/Library/Preferences/com.apple.loginwindow.plist
+
+
+
+
+
+

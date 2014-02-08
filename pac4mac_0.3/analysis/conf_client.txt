@@ -1,0 +1,21 @@
+[COOKIES]
+[FIREFOX_COOKIE]/Users/sud0man/Library/Application Support/Firefox/Profiles/2px514mz.default/cookies.sqlite
+[CHROME_COOKIE]/Users/sud0man/Library/Application Support/Google/Chrome/Default/Cookies
+[SAFARI_COOKIE]/Users/sud0man/Library/Cookies/Cookies.plist
+#remove "OR" to activate following line
+OR[SAFARI_COOKIE]/users/sud0man/Library/Cookies/Cookies.binarycookies
+[OPERA_COOKIE]/Users/sud0man/Library/Application Support/com.operasoftware.Opera/Cookies
+#remove "OR" to activate following line
+OR[OPERA_COOKIE]/Users/sud0man/Library/Opera/cookies4.dat
+
+[IOS_DEVICES]
+[IOS_DEVICES]/private/var/db/lockdown/
+
+[HISTORY]
+[FIREFOX_HISTORY]/Users/sud0man/Library/Application Support/Firefox/Profiles/2px514mz.default/places.sqlite
+[CHROME_HISTORY]/Users/sud0man/Library/Application Support/Google/Chrome/Default/History
+[SAFARI_HISTORY]/Users/sud0man/Library/Safari/History.plist
+[OPERA_HISTORY]/Users/sud0man/Library/Opera/global_history.dat
+#remove "OR" to activate following line
+OR[OPERA_HISTORY]/Users/sud0man/Library/Application Support/com.operasoftware.Opera/History
+

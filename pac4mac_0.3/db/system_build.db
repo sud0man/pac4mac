@@ -1,0 +1,17 @@
+#User system info
+[COPY_FILE][Init_UserInfo]/private/var/db/.AppleSetupDone
+
+#Time
+[CMD][LocalTime]file /etc/localtime
+[PLIST][LocalTime2]/Library/Preferences/.GlobalPreferences.plist
+
+#OS Version
+[PLIST][OSVersion_Info]/System/Library/PreferencePanes/Ink.prefPane/Contents/Info.plist
+[PLIST][OSVersion_Client]/System/Library/CoreServices/SystemVersion.plist
+[PLIST][OSVersion_Server]/System/Library/CoreServices/ServerVersion.plist
+[CMD][OSVersion_Uname]uname -an
+
+#Identity
+[PLIST][Identity_1]/Library/Preferences/AddressBookMe.plist
+[PLIST_USER][Identity_2]/Users/<USER>/Library/Preferences/AddressBookMe.plist
+[COPY_FILE][Identity_3]/private/var/db/.AppleSetupDone

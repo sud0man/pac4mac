@@ -1,0 +1,3 @@
+[COPY_FILE_USER][Widget_Stickies]/Users/<USER>/Library/Preferences/widget-com.apple.widget.stickies.plist
+[COPY_FILE_USER][Appli_Stickies]/Users/<USER>/Library/StickiesDatabase
+[COPY_FILE_USER][Notes]//Users/<USER>/Library/Containers/com.apple.Notes/Data/Library/Notes/NotesV1.storedata-wal 

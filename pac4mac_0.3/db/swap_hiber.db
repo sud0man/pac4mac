@@ -1,0 +1,5 @@
+[CMD][Hibernate_File]stat /private/var/vm/sleepimage
+[COPY_FILE][Hibernate_File]/private/var/vm/sleepimage
+
+[CMD][SWAP_File]stat /private/var/vm/swapfile0
+[COPY_FILE][SWAP_File]/private/var/vm/swapfile0
