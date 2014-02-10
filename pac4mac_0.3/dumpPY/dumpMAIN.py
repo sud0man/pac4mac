@@ -1272,8 +1272,8 @@ def fct_dump_current_keychain():
 	for i in range(len(lines_keychain)) :
 		lines_keychain[i] = lines_keychain[i].strip("\n")
 		if j == 1 and len(lines_keychain[i]) <= size_pass_keychain and lines_keychain[i] != "" :
-			print_green("Password: XXXXXXXXXXXXXXXXXXXX")
-			#print_green("Password: " + lines_keychain[i].strip("\"")+"\n")
+			#print_green("Password: XXXXXXXXXXXXXXXXXXXX")
+			print_green("Password: " + lines_keychain[i].strip("\"")+"\n")
 			fct_writefile("Password: " + lines_keychain[i].strip("\"")+"\n", file_current_keychain_pass)
 			fct_add_pass_database(lines_keychain[i].strip("\"")+"\n")
 			j = 0
@@ -1325,8 +1325,8 @@ def fct_dump_current_keychain():
 				print_green("Login: " + var_login.strip("\""))
 				fct_writefile("Login: " + var_login.strip("\"")+"\n", file_current_keychain_juuso_pass)
 				
-				#print_green("Password: " + var_pass.strip("\"") + "\n")
-				print_green("Password: XXXXXXXXXXXXXXXXXXXX" + "\n")
+				print_green("Password: " + var_pass.strip("\"") + "\n")
+				#print_green("Password: XXXXXXXXXXXXXXXXXXXX" + "\n")
 				fct_writefile("Password: " + var_pass.strip("\"")+"\n", file_current_keychain_juuso_pass)
 				
 				fct_add_pass_database(var_pass.strip("\"")+"\n")
