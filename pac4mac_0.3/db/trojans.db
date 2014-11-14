@@ -1,4 +1,26 @@
 
+[CMD][Malware_Wirelurker]stat /System/Library/LaunchDaemons/com.apple.appstore.plughelper.plist
+[PLIST][Malware_Wirelurker]/System/Library/LaunchDaemons/com.apple.appstore.plughelper.plist
+[CMD][Malware_Wirelurker]stat /System/Library/LaunchDaemons/com.apple.MailServiceAgentHelper.plist
+[PLIST][Malware_Wirelurker]/System/Library/LaunchDaemons/com.apple.MailServiceAgentHelper.plist
+[CMD][Malware_Wirelurker]stat /System/Library/LaunchDaemons/com.apple.systemkeychain-helper.plist
+[PLIST][Malware_Wirelurker]/System/Library/LaunchDaemons/com.apple.systemkeychain-helper.plist
+[CMD][Malware_Wirelurker]stat /System/Library/LaunchDaemons/com.apple.periodic-dd-mm-yy.plis
+[COPY_FILE][Malware_Wirelurker]/System/Library/LaunchDaemons/com.apple.periodic-dd-mm-yy.plis
+[CMD][Malware_Wirelurker]stat /usr/bin/com.apple.MailServiceAgentHelper
+[COPY_FILE][Malware_Wirelurker]/usr/bin/com.apple.MailServiceAgentHelper
+[CMD][Malware_Wirelurker]stat /usr/bin/periodicdate
+[COPY_FILE][Malware_Wirelurker]/usr/bin/periodicdate
+[CMD][Malware_Wirelurker]stat /usr/bin/systemkeychain-helper
+[COPY_FILE][Malware_Wirelurker]/usr/bin/systemkeychain-helper
+[CMD][Malware_Wirelurker]stat /usr/bin/com.apple.appstore.PluginHelper
+[COPY_FILE][Malware_Wirelurker]/usr/bin/com.apple.appstore.PluginHelper
+[CMD][Malware_Wirelurker]stat /usr/bin/stty5.11.pl
+[COPY_FILE][Malware_Wirelurker]/usr/bin/stty5.11.pl
+[CMD][Malware_Wirelurker]stat /etc/manpath.d/ 
+[COPY_FILE][Malware_Wirelurker]/etc/manpath.d/ 
+
+
 [CMD_USER][Malware_Sabpab]stat /Users/<USER>/Library/LaunchAgents/com.apple.PubSabAgent.plist
 [PLIST_USER][Malware_Sabpab]/Users/<USER>/Library/LaunchAgents/com.apple.PubSabAgent.plist
 [CMD_USER][Malware_Sabpab]stat /Users/<USER>/Library/Preferences/com.apple.PubSabAgent.pfile
