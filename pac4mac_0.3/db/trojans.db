@@ -20,7 +20,6 @@
 [CMD][Malware_Wirelurker]stat /etc/manpath.d/ 
 [COPY_FILE][Malware_Wirelurker]/etc/manpath.d/ 
 
-
 [CMD_USER][Malware_Sabpab]stat /Users/<USER>/Library/LaunchAgents/com.apple.PubSabAgent.plist
 [PLIST_USER][Malware_Sabpab]/Users/<USER>/Library/LaunchAgents/com.apple.PubSabAgent.plist
 [CMD_USER][Malware_Sabpab]stat /Users/<USER>/Library/Preferences/com.apple.PubSabAgent.pfile
@@ -48,8 +47,8 @@
 [COPY_FILE][Malware_Geneio]/Library/PrivilegedHelperTools/com.genieoinnovation.macextension.client
 [CMD][Malware_Geneio]stat /Applications/Genieo
 [COPY_DIR][Malware_Geneio]/Applications/Genieo
-[CMD][Malware_Geneio]stat /Applications/Uninstall IM Completer.app
-[COPY_DIR][Malware_Geneio]/Applications/Uninstall IM Completer.app
+[CMD][Malware_Geneio]stat /Applications/Uninstall\ IM\ Completer.app
+[COPY_DIR][Malware_Geneio]/Applications/Uninstall\ IM\ Completer.app
 [CMD][Malware_Geneio]stat /var/lib/libimckit.dylib
 [COPY_FILE][Malware_Geneio]/var/lib/libimckit.dylib
 [CMD][Malware_Geneio]stat /var/lib/libimckitsa.dylib
@@ -59,8 +58,8 @@
 
 [CMD][Malware_Olyx]stat /Library/LaunchAgents/www.google.com.tstart.plist
 [PLIST][Malware_Olyx]/Library/LaunchAgents/www.google.com.tstart.plist
-[CMD][Malware_Olyx]stat /Library/Application Support/google/startp
-[COPY_DIR][Malware_Olyx]/Library/Application Support/google/startp
+[CMD][Malware_Olyx]stat /Library/Application\ Support/google/startp
+[COPY_DIR][Malware_Olyx]/Library/Application\ Support/google/startp
 
 [CMD_USER][Malware_CallMe]stat /Users/<USER>/Library/launchagents/.system
 [COPY_DIR_USER][Malware_CallMe]/Users/<USER>/Library/launchagents/.system
@@ -70,8 +69,8 @@
 [PLIST][Malware_CallMe]/Library/LaunchDaemons/apple.plist
 [CMD][Malware_CallMe]stat /Library/LaunchDaemons/.systm
 [COPY_DIR][Malware_CallMe]/Library/LaunchDaemons/.systm
-[CMD][Malware_CallMe]stat /Library/Application Support /.realPlayerUpdate
-[COPY_DIR][Malware_CallMe]/Library/Application Support /.realPlayerUpdate
+[CMD][Malware_CallMe]stat /Library/Application\ Support/.realPlayerUpdate
+[COPY_DIR][Malware_CallMe]/Library/Application\ Support/.realPlayerUpdate
 [CMD][Malware_CallMe]stat /tmp/tmpAddressbook.vcf
 [COPY_DIR][Malware_CallMe]/tmp/tmpAddressbook.vcf
 [CMD][Malware_CallMe]stat /tmp/__system
@@ -108,10 +107,10 @@
 
 [CMD_USER][Malware_Yontoo]stat /Users/<USER>/Library/Safari/Extensions/Extensions.plist
 [PLIST_USER][Malware_Yontoo]/Users/<USER>/Library/Safari/Extensions/Extensions.plist
-[CMD_USER][Malware_Yontoo]stat /Users/<USER>/Library/Application Support/Mozzilla/Extensions/
-[COPY_DIR_USER][Malware_Yontoo]/Users/<USER>/Library/Application Support/Mozzilla/Extensions/
-[CMD_USER][Malware_Yontoo]stat /Users/<USER>/Library/Application Support/Chrome/External Extensions/
-[COPY_DIR_USER][Malware_Yontoo]/Users/<USER>/Library/Application Support/Chrome/External Extensions/
+[CMD_USER][Malware_Yontoo]stat /Users/<USER>/Library/Application\ Support/Mozzilla/Extensions/
+[COPY_DIR_USER][Malware_Yontoo]/Users/<USER>/Library/Application\ Support/Mozzilla/Extensions/
+[CMD_USER][Malware_Yontoo]stat /Users/<USER>/Library/Application\ Support/Chrome/External Extensions/
+[COPY_DIR_USER][Malware_Yontoo]/Users/<USER>/Library/Application\ Support/Chrome/External Extensions/
 
 [CMD_USER][Malware_Renepo]stat /System/Library/StartupItems/$scriptname/StartupParamaters.plist
 [PLIST_USER]/System/Library/StartupItems/$scriptname/StartupParamaters.plist
@@ -128,19 +127,19 @@
 [COPY_FILE_USER][Malware_Okaz]/Users/<USER>/Library/Safari/Extensions/ChatZumBar.safariextz
 [CMD_USER][Malware_Okaz]stat /Users/<USER>/Library/Application Support/Google/Chrome/Chrome.crx
 [COPY_FILE_USER][Malware_Okaz]/Users/<USER>/Library/Application Support/Google/Chrome/Chrome.crx
-[CMD][Malware_Okaz]stat /Library/Internet Plug-Ins/zako.plugin
-[Malware_Okaz]/Library/Internet Plug-Ins/zako.plugin
-[CMD_USER][Malware_Okaz]stat /Library/Internet Plug-Ins/uid.plist
-[PLIST_USER][Malware_Okaz]/Library/Internet Plug-Ins/uid.plist
+[CMD][Malware_Okaz]stat /Library/Internet\ Plug-Ins/zako.plugin
+[Malware_Okaz]/Library/Internet\ Plug-Ins/zako.plugin
+[CMD_USER][Malware_Okaz]stat /Library/Internet\ Plug-Ins/uid.plist
+[PLIST_USER][Malware_Okaz]/Library/Internet\ Plug-Ins/uid.plist
 [CMD][Malware_Okaz]stat /Library/ScriptingAdditions/SIMBL.osax
 [COPY_FILE][Malware_Okaz]/Library/ScriptingAdditions/SIMBL.osax
 [CMD_USER][Malware_Okaz]stat /Library/LaunchAgents/net.culater.SIMBL.Agent.plist
 [PLIST_USER][Malware_Okaz]/Library/LaunchAgents/net.culater.SIMBL.Agent.plist
-[CMD][Malware_Okaz]stat /Library/Application Support/SIMBL/Plugins/SafariOmnibar.bundle
-[COPY_FILE[Malware_Okaz]/Library/Application Support/SIMBL/Plugins/SafariOmnibar.bundle
+[CMD][Malware_Okaz]stat /Library/Application\ Support/SIMBL/Plugins/SafariOmnibar.bundle
+[COPY_FILE[Malware_Okaz]/Library/Application\ Support/SIMBL/Plugins/SafariOmnibar.bundle
 
-[CMD][Malware_RSPLug]stat /Lubrary/Internet Plugins/Mozillplugin.plugin
-[COPY_FILE][Malware_RSPLug]stat /Lubrary/Internet Plugins/Mozillplugin.plugin
+[CMD][Malware_RSPLug]stat /Lubrary/Internet\ Plugins/Mozillplugin.plugin
+[COPY_FILE][Malware_RSPLug]stat /Lubrary/Internet\ Plugins/Mozillplugin.plugin
 
 [CMD][Malware_logKext]stat /Library/LaunchDaemons/logKext.plist
 [PLIST][Malware_logKext]/Library/LaunchDaemons/logKext.plist
@@ -172,7 +171,7 @@
 [CMD_USER][Malware_XSLCMD]stat /Users/<USER>/.fontset/pxupdate.ini
 [COPY_FILE_USER][Malware_XSLCMD]/Users/<USER>/.fontset/pxupdate.ini
 [CMD_USER][Malware_XSLCMD]stat /Users/<USER>/.fontset/chkdiska.dat
-/Users/<USER>/.fontset/chkdiska.dat
+[COPY_FILE_USER][Malware_XSLCMD]/Users/<USER>/.fontset/chkdiska.dat
 [CMD_USER][Malware_XSLCMD]stat /Users/<USER>/.fontset/chkdiskc.dat
 [COPY_FILE_USER][Malware_XSLCMD]/Users/<USER>/.fontset/chkdiskc.dat
 [CMD_USER][Malware_XSLCMD]stat /Users/<USER>/Library/LaunchAgents/clipboardd
