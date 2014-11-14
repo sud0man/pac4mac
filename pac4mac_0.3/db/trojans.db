@@ -1,14 +1,162 @@
-[CMD_USER][Malware_Flashback]stat /Users/<USER>/Library/LaunchAgents/com.java.update.plist
-[PLIST_USER][Malware_Flashback]/Users/<USER>/Library/LaunchAgents/com.java.update.plist
 
-[CMD_USER][Malware_Imuler]stat /Users/<USER>/Library/LaunchAgents/checkvir.plist
-[PLIST_USER][Malware_Imuler]/Users/<USER>/Library/LaunchAgents/checkvir.plist
+[CMD_USER][Malware_Sabpab]stat /Users/<USER>/Library/LaunchAgents/com.apple.PubSabAgent.plist
+[PLIST_USER][Malware_Sabpab]/Users/<USER>/Library/LaunchAgents/com.apple.PubSabAgent.plist
+[CMD_USER][Malware_Sabpab]stat /Users/<USER>/Library/Preferences/com.apple.PubSabAgent.pfile
+[COPY_FILE_USER][Malware_Sabpab]stat /Users/<USER>/Library/Preferences/com.apple.PubSabAgent.pfile
 
-[CMD_USER][Malware_SabPub]stat /Users/<USER>/Library/LaunchAgents/com.apple.PubSabAgent.plist
-[PLIST_USER][Malware_SabPub]/Users/<USER>/Library/LaunchAgents/com.apple.PubSabAgent.plist
+[CMD_USER][Malware_Crisis]stat /Users/<USER>/Library/Preferences/jlc3V7we.app
+[COPY_DIR_USER][Malware_Crisis]/Users/<USER>/Library/Preferences/jlc3V7we.app
+[CMD_USER][Malware_Crisis]stat /Users/<USER>/Library/ScriptingAdditions/appleHID/
+[COPY_DIR_USER][Malware_Crisis]/Users/<USER>/Library/ScriptingAdditions/appleHID/
+[CMD][Malware_Crisis]stat /Library/LaunchAgents/com.apple.mdworker.plist
+[PLIST_USER][Malware_Crisis]/Library/LaunchAgents/com.apple.mdworker.plist
+[CMD][Malware_Crisis]stat /System/Library/Frameworks/Foundation.framework/XPCServices/
+[COPY_DIR][Malware_Crisis]stat /System/Library/Frameworks/Foundation.framework/XPCServices/
+
+[CMD_USER][Malware_Geneio]stat /Users/<USER>/Library/LaunchAgents/com.geneio.completer.download.plist
+[PLIST_USER][Malware_Geneio]/Users/<USER>/Library/LaunchAgents/com.geneio.completer.download.plist
+[CMD_USER][Malware_Geneio]stat /Users/<USER>/Library/LaunchAgents/com.geneio.completer.update.plist
+[PLIST_USER][Malware_Geneio]/Users/<USER>/Library/LaunchAgents/com.geneio.completer.update.plist
+[CMD_USER][Malware_Geneio]stat /Users/<USER>/Library/Preferences/com.geneio.settings.plist
+[PLIST_USER]/Users/<USER>/Library/Preferences/com.geneio.settings.plist
+[CMD][Malware_Geneio]stat /Library/LaunchDaemons/com.genieoinnovation.macextension.client.plist
+[PLIST][Malware_Geneio]/Library/LaunchDaemons/com.genieoinnovation.macextension.client.plist
+
+[CMD][Malware_Geneio]stat /Library/PrivilegedHelperTools/com.genieoinnovation.macextension.client
+[COPY_FILE][Malware_Geneio]/Library/PrivilegedHelperTools/com.genieoinnovation.macextension.client
+[CMD][Malware_Geneio]stat /Applications/Genieo
+[COPY_DIR][Malware_Geneio]/Applications/Genieo
+[CMD][Malware_Geneio]stat /Applications/Uninstall IM Completer.app
+[COPY_DIR][Malware_Geneio]/Applications/Uninstall IM Completer.app
+[CMD][Malware_Geneio]stat /var/lib/libimckit.dylib
+[COPY_FILE][Malware_Geneio]/var/lib/libimckit.dylib
+[CMD][Malware_Geneio]stat /var/lib/libimckitsa.dylib
+[COPY_FILE][Malware_Geneio]/var/lib/libimckitsa.dylib
+[CMD][Malware_Geneio]stat /Library/Frameworks/GenieoExtra.framework
+[COPY_FILE][Malware_Geneio]/Library/Frameworks/GenieoExtra.framework
+
+[CMD][Malware_Olyx]stat /Library/LaunchAgents/www.google.com.tstart.plist
+[PLIST][Malware_Olyx]/Library/LaunchAgents/www.google.com.tstart.plist
+[CMD][Malware_Olyx]stat /Library/Application Support/google/startp
+[COPY_DIR][Malware_Olyx]/Library/Application Support/google/startp
+
+[CMD_USER][Malware_CallMe]stat /Users/<USER>/Library/launchagents/.system
+[COPY_DIR_USER][Malware_CallMe]/Users/<USER>/Library/launchagents/.system
+[CMD_USER][Malware_CallMe]stat /Users/<USER>/Library/launchagents/apple.plist
+[PLIST_USER][Malware_CallMe]/Users/<USER>/Library/launchagents/apple.plist
+[CMD][Malware_CallMe]stat /Library/LaunchDaemons/apple.plist
+[PLIST][Malware_CallMe]/Library/LaunchDaemons/apple.plist
+[CMD][Malware_CallMe]stat /Library/LaunchDaemons/.systm
+[COPY_DIR][Malware_CallMe]/Library/LaunchDaemons/.systm
+[CMD][Malware_CallMe]stat /Library/Application Support /.realPlayerUpdate
+[COPY_DIR][Malware_CallMe]/Library/Application Support /.realPlayerUpdate
+[CMD][Malware_CallMe]stat /tmp/tmpAddressbook.vcf
+[COPY_DIR][Malware_CallMe]/tmp/tmpAddressbook.vcf
+[CMD][Malware_CallMe]stat /tmp/__system
+[COPY_DIR][Malware_CallMe]/tmp/__system
+
+[CMD_USER][Malware_Revir]stat /Users/<USER>/Library/LaunchAgents/checkvir.plist
+[PLIST_USER][Malware_Revir]/Users/<USER>/Library/LaunchAgents/checkvir.plist
+[CMD][Malware_Revir]stat /Applications/DSC08387.app
+[COPY_DIR][Malware_Revir]/Applications/DSC08387.app
+[CMD][Malware_Revir]stat /Applications/DSC08511.app
+[COPY_DIR][Malware_Revir]/Applications/DSC08511.app
+[CMD][Malware_Revir]stat /Applications/DSC08381.app
+[COPY_DIR][Malware_Revir]/Applications/DSC08381.app
+[CMD][Malware_Revir]stat /tmp/updtdata
+[COPY_DIR][Malware_Revir]/tmp/updtdata
+[CMD][Malware_Revir]stat /tmp/host
+[COPY_DIR][Malware_Revir]/tmp/host
+
+[CMD_USER][Malware_MacProtector]stat /Users/<USER>/Library/Preferences/com.apple.loginitems.plist
+[PLIST_USER]/Users/<USER>/Library/Preferences/com.apple.loginitems.plist
+[CMD][Malware_MacProtector]stat /Library/Receipts/mdinstall.pkg
+[COPY_FILE][Malware_MacProtector]/Library/Receipts/mdinstall.pkg
+[CMD][Malware_MacProtector]stat /Library/Receipts/Ispavid.pkg
+[COPY_FILE][Malware_MacProtector]/Library/Receipts/Ispavid.pkg
+[CMD][Malware_MacProtector]stat /Library/Receipts/macProtectorInstallerProgramPostFlight.pkg
+[COPY_FILE][Malware_MacProtector]/Library/Receipts/macProtectorInstallerProgramPostFlight.pkg
+[CMD][Malware_MacProtector]stat /Library/Receipts/macprotector.pkg
+[COPY_FILE][Malware_MacProtector]/Library/Receipts/macprotector.pkg
+
+[CMD][Malware_Leverage]stat /Users/Shared/UserEvent.app
+[COPY_FILE][Malware_Leverage]/Users/Shared/UserEvent.app
+[CMD][Malware_Leverage]stat /Applications/DSC00117.app
+[COPY_FILE][Malware_Leverage]/Applications/DSC00117.app
+
+[CMD_USER][Malware_Yontoo]stat /Users/<USER>/Library/Safari/Extensions/Extensions.plist
+[PLIST_USER][Malware_Yontoo]/Users/<USER>/Library/Safari/Extensions/Extensions.plist
+[CMD_USER][Malware_Yontoo]stat /Users/<USER>/Library/Application Support/Mozzilla/Extensions/
+[COPY_DIR_USER][Malware_Yontoo]/Users/<USER>/Library/Application Support/Mozzilla/Extensions/
+[CMD_USER][Malware_Yontoo]stat /Users/<USER>/Library/Application Support/Chrome/External Extensions/
+[COPY_DIR_USER][Malware_Yontoo]/Users/<USER>/Library/Application Support/Chrome/External Extensions/
+
+[CMD_USER][Malware_Renepo]stat /System/Library/StartupItems/$scriptname/StartupParamaters.plist
+[PLIST_USER]/System/Library/StartupItems/$scriptname/StartupParamaters.plist
+[CMD][Malware_Renepo]stat /System/Library/StartupIems/$scriptname/$scriptname
+[COPY_FILE][Malware_Renepo]/System/Library/StartupIems/$scriptname/$scriptname
+
+[Malware_IceFog]
+[CMD_USER][Malware_IceFog]stat /Users/<USER>/.launchd.app
+[COPY_DIR_USER][Malware_IceFog]/Users/<USER>/.launchd.app
+[CMD_USER][Malware_IceFog]stat /Users/<USER>/Library/LaunchAgents/apple.launchd.plist
+[PLIST_USER][Malware_IceFog]/Users/<USER>/Library/LaunchAgents/apple.launchd.plist
+
+[CMD_USER][Malware_Okaz]stat /Users/<USER>/Library/Safari/Extensions/ChatZumBar.safariextz
+[COPY_FILE_USER][Malware_Okaz]/Users/<USER>/Library/Safari/Extensions/ChatZumBar.safariextz
+[CMD_USER][Malware_Okaz]stat /Users/<USER>/Library/Application Support/Google/Chrome/Chrome.crx
+[COPY_FILE_USER][Malware_Okaz]/Users/<USER>/Library/Application Support/Google/Chrome/Chrome.crx
+[CMD][Malware_Okaz]stat /Library/Internet Plug-Ins/zako.plugin
+[Malware_Okaz]/Library/Internet Plug-Ins/zako.plugin
+[CMD_USER][Malware_Okaz]stat /Library/Internet Plug-Ins/uid.plist
+[PLIST_USER][Malware_Okaz]/Library/Internet Plug-Ins/uid.plist
+[CMD][Malware_Okaz]stat /Library/ScriptingAdditions/SIMBL.osax
+[COPY_FILE][Malware_Okaz]/Library/ScriptingAdditions/SIMBL.osax
+[CMD_USER][Malware_Okaz]stat /Library/LaunchAgents/net.culater.SIMBL.Agent.plist
+[PLIST_USER][Malware_Okaz]/Library/LaunchAgents/net.culater.SIMBL.Agent.plist
+[CMD][Malware_Okaz]stat /Library/Application Support/SIMBL/Plugins/SafariOmnibar.bundle
+[COPY_FILE[Malware_Okaz]/Library/Application Support/SIMBL/Plugins/SafariOmnibar.bundle
+
+[CMD][Malware_RSPLug]stat /Lubrary/Internet Plugins/Mozillplugin.plugin
+[COPY_FILE][Malware_RSPLug]stat /Lubrary/Internet Plugins/Mozillplugin.plugin
+
+[CMD][Malware_logKext]stat /Library/LaunchDaemons/logKext.plist
+[PLIST][Malware_logKext]/Library/LaunchDaemons/logKext.plist
 
 [CMD_USER][Malware_Mac_Control]stat /Users/<USER>/Library/LaunchAgents/com.apple.FolderActionsxl.plist
 [PLIST_USER][Malware_Mac_Control]/Users/<USER>/Library/LaunchAgents/com.apple.FolderActionsxl.plist
 
-[CMD][Malware_logKext]stat /Library/LaunchDaemons/logKext.plist
-[PLIST][Malware_logKext]/Library/LaunchDaemons/logKext.plist
+[CMD_USER][Malware_Ventir]stat /Users/<USER>/Library/LaunchAgents/com.updated.launchagent.plist
+[PLIST_USER][Malware_Ventir]/Users/<USER>/Library/LaunchAgents/com.updated.launchagent.plist
+[CMD_USER][Malware_Ventir]stat /Users/<USER>/Library/.local/*
+[COPY_DIR_USER][Malware_Ventir]/Users/<USER>/Library/.local/*
+[CMD][Malware_Ventir]stat /Library/LaunchDaemons/com.updated.launchagent.plist
+[PLIST][Malware_Ventir]/Library/LaunchDaemons/com.updated.launchagent.plist
+[CMD][Malware_Ventir]stat /Library/.local/*
+[COPY_DIR][Malware_Ventir]/Library/.local/*
+
+[CMD_USER][Malware_Janicab]stat /Users/<USER>/.t/runner.pyc
+[COPY_FILE_USER][Malware_Janicab]/Users/<USER>/.t/runner.pyc
+
+[CMD_USER][Malware_Flashback]stat /Users/<USER>/.jupdate
+[COPY_FILE_USER][Malware_Flashback]/Users/<USER>/.jupdate
+[CMD_USER][Malware_Flashback]stat /Users/<USER>/.MacOSX/environment.plist
+[PLIST_USER][Malware_Flashback]/Users/<USER>/.MacOSX/environment.plist
+[CMD_USER][Malware_Flashback]stat /Users/<USER>/Library/LaunchAgents/com.java.update.plist
+[PLIST_USER][Malware_Flashback]/Users/<USER>/Library/LaunchAgents/com.java.update.plist
+[CMD][Malware_Flashback]stat /var/db/receipts/com.adobe.update.fp.flashPlayer.FlashPlayer.pkg.plist
+[PLIST][Malware_Flashback]/var/db/receipts/com.adobe.update.fp.flashPlayer.FlashPlayer.pkg.plist
+
+[CMD_USER][Malware_XSLCMD]stat /Users/<USER>/.fontset/pxupdate.ini
+[COPY_FILE_USER][Malware_XSLCMD]/Users/<USER>/.fontset/pxupdate.ini
+[CMD_USER][Malware_XSLCMD]stat /Users/<USER>/.fontset/chkdiska.dat
+/Users/<USER>/.fontset/chkdiska.dat
+[CMD_USER][Malware_XSLCMD]stat /Users/<USER>/.fontset/chkdiskc.dat
+[COPY_FILE_USER][Malware_XSLCMD]/Users/<USER>/.fontset/chkdiskc.dat
+[CMD_USER][Malware_XSLCMD]stat /Users/<USER>/Library/LaunchAgents/clipboardd
+[COPY_FILE_USER][Malware_XSLCMD]/Users/<USER>/Library/LaunchAgents/clipboardd
+[CMD][Malware_XSLCMD]stat /Library/Logs/clipboardd
+[COPY_FILE][Malware_XSLCMD]/Library/Logs/clipboardd
+[CMD][Malware_XSLCMD]stat /var/db/.AccessibilityAPIEnabled
+[COPY_FILE][Malware_XSLCMD]/var/db/.AccessibilityAPIEnabled
+

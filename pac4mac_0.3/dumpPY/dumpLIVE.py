@@ -31,8 +31,8 @@ dir_path_incept = 'tools/inception/'
 file_dump_RAM_DMA = dir_path_RAM + '/RAM_memory.dmp'
 
 #Mac Memory Reader
-dir_path_mmr = 'tools/MacMemoryReader/'
-file_dump_RAM = '../../' + dir_path_RAM + '/RAM_memory.dmp'
+dir_path_osxpmem = 'tools/pmem/OSXPMem/'
+file_dump_RAM = '../../../' + dir_path_RAM + '/RAM_memory.dmp'
 
 CheckOut4Mac_path = 'tools/CheckOut4Mac/CheckOut4Mac_0.1.py'
 
@@ -224,16 +224,20 @@ def fct_dump_RAM_soft():
 			fct_writefile(var_log, file_history_dest)
 			fct_writefile_del(os_version, file_version_dest)
 			print_green("\nOS detected > " + os_version )
+
+			#good right
+			os.system('chmod -R 741 ' + dir_path_osxpmem)
+			os.system('chown -R root:wheel ' + dir_path_osxpmem)
 			
 			current_cwd = os.getcwd()
-			os.chdir(dir_path_mmr)
+			os.chdir(dir_path_osxpmem)
 
 			print_log("Start of dumping, be patient ...")
 			start_time = time.clock()
 			try:
-				commands.getoutput("./mmr " + file_dump_RAM)
+				commands.getoutput("./osxpmem " + file_dump_RAM)
 				duration=time.clock() - start_time
-				duration = (duration*1000)*3
+				duration = (duration*10000)*3
 				print_log ("Duration of dump : " + str(duration) + " seconds")
 				os.chdir(current_cwd)
 				print_log("[\RAM_DUMP] RAM image is stored into " + dir_path_RAM + "/RAM_memory.dmp")
@@ -382,7 +386,7 @@ else:
 
 
 
-print_red("\n            ====Live Dump features====")
+print_red("\n                      ====Live Dump features====")
 print_green("========================================================================\n")
 
 
