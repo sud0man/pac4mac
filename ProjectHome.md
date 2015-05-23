@@ -1,0 +1,3 @@
+Pac4Mac (Plug And Check for Mac OS X) is a portable Forensics framework (to launch from USB storage) allowing extraction and analysis session informations in highlighting the real risks in term of information leak (history, passwords, technical secrets, business secrets, ...). Pac4Mac can be used to check security of your Mac OS X system or to help you during forensics investigation.
+
+More details: http://sud0man.blogspot.fr/2014/02/new-version-of-mac-os-x-forensics.html
