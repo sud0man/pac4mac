@@ -66,9 +66,11 @@
 [COPY_DIR][InternetPlugIn]/Library/Internet\ Plug-Ins/
 [CMD_USER][SafariPlugIn]stat /Users/<USER>/Library/Safari/Extensions/Extensions/*
 [COPY_DIR_USER][SafariPlugIn]/Users/<USER>/Library/Safari/Extensions/Extensions/
-[CMD_USER][ChromePlugIn]stat /Users/<USER>/Library/Application Support/Google/Chrome/External Extensions/
+[CMD_USER][ChromePlugIn]stat /Users/<USER>/Library/Application Support/Google/Chrome/External Extensions/*
 [COPY_DIR_USER][ChromePlugIn]/Users/<USER>/Library/Application Support/Google/Chrome/External Extensions/
-[CMD_USER][FirefoxPlugIn]stat /Users/<USER>/Library/Application Support/Mozilla/Extensions/
+[CMD_USER][ChromePlugIn2]stat /Users/<USER>/Library/Application Support/Google/Chrome/Default/Extensions/*
+[COPY_DIR_USER][ChromePlugIn2]/Users/<USER>/Library/Application Support/Google/Chrome/Default/Extensions/
+[CMD_USER][FirefoxPlugIn]stat /Users/<USER>/Library/Application Support/Mozilla/Extensions/*
 [COPY_DIR_USER][FirefoxPlugIn]/Users/<USER>/Library/Application Support/Mozilla/Extensions/
 
 
