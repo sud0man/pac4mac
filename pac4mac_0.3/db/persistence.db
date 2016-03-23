@@ -38,3 +38,37 @@
 
 [CMD][Crontab_ROOT]crontab -u root -l
 [CMD_USER][Crontab_USER]crontab -u <USER> -l
+
+[CMD][rc.common]stat /etc/rc.common
+[COPY_FILE][rc.common]/etc/rc.common
+
+[CMD][HookLogin]stat /Users/<USER>/Library/Preferences/com.apple.loginwindow.plist
+[PLIST_USER][HookLogin]/Users/<USER>/Library/Preferences/com.apple.loginwindow.plist
+
+[CMD][StartupItems1]stat /System/Library/StartupItems/*
+[COPY_DIR][StartupItems1]/System/Library/StartupItems/
+[CMD][StartupItems2]stat /Library/StartupItems/*
+[COPY_DIR][StartupItems2]/Library/StartupItems/
+
+[CMD][LaunchdConf]stat /etc/launchd.conf
+[COPY_FILE][LaunchdConf]/etc/launchd.conf
+
+[CMD][ReOpenApp]stat /Users/<USER>/Library/Preferences/ByHost/com.apple.loginwindow.<USERPROFILE>.plist
+[COPY_FILE_USER_PROFILE][ReOpenApp]/Users/<USER>/Library/Preferences/ByHost/com.apple.loginwindow.<USERPROFILE>.plist
+
+[CMD][SecurityAgentPlugins]stat /Library/Security/SecurityAgentPlugins/*
+[COPY_DIR][SecurityAgentPlugins]/Library/Security/SecurityAgentPlugins/
+
+[CMD][Spotlight_import]stat /Library/Spotlight/*
+[COPY_DIR][Spotlight_import]/Library/Spotlight/
+
+[CMD][InternetPlugIn]stat /Library/Internet Plug-Ins/*
+[COPY_DIR][InternetPlugIn]/Library/Internet\ Plug-Ins/
+[CMD_USER][SafariPlugIn]stat /Users/<USER>/Library/Safari/Extensions/Extensions/*
+[COPY_DIR_USER][SafariPlugIn]/Users/<USER>/Library/Safari/Extensions/Extensions/
+[CMD_USER][ChromePlugIn]stat /Users/<USER>/Library/Application Support/Google/Chrome/External Extensions/
+[COPY_DIR_USER][ChromePlugIn]/Users/<USER>/Library/Application Support/Google/Chrome/External Extensions/
+[CMD_USER][FirefoxPlugIn]stat /Users/<USER>/Library/Application Support/Mozilla/Extensions/
+[COPY_DIR_USER][FirefoxPlugIn]/Users/<USER>/Library/Application Support/Mozilla/Extensions/
+
+
