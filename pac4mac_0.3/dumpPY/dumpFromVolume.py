@@ -86,9 +86,13 @@ def fct_data_dump():
 						var_version = "12"
 					elif "10.9" in var_version:
 						var_version = "13"
+					elif "10.10" in var_version:
+						var_version = "14"
+					elif "10.11" in var_version:
+						var_version = "15"
 					else: 
-						print_red("\nUnsupported OS version.")
-						sys.exit()
+						print_red("\nUnsupported OS version...")
+						var_version = "XX"
 					os.system('python dumpPY/dumpMAIN.py ' + var_version + ' target ' + select_vol_target)
 			else:
 				print_red("\nPlease to select a valid disk or partition ...\n")

@@ -1998,16 +1998,19 @@ def fct_display_password(keychain_name,file_keychain_decrypted):
 
 def fct_unlock_keychain(dir_dump_keychain,keychain_name):
 	keychain_to_analyse = dir_dump_keychain + keychain_name
-	keychain_pass=raw_input("Enter the password (b to back) > ")
+	keychain_pass=raw_input("Enter the password (b to back) > ").strip("\n")
 	
 	if keychain_pass != 'b': 
 		#lock keychain if open
-		os.system('security lock-keychain ' + current_path + '/' + keychain_to_analyse)
-		res_unlock_keychain=commands.getoutput('security unlock-keychain -p "' + keychain_pass + '" ' + current_path + '/' + keychain_to_analyse)
+		os.system('security lock-keychain "' + current_path + '/' + keychain_to_analyse + '"')
+		print('security unlock-keychain -p ' + keychain_pass + ' "' + current_path + '/' + keychain_to_analyse + '"')
+		res_unlock_keychain=commands.getoutput('security unlock-keychain -p ' + keychain_pass + ' ' + current_path + '/' + keychain_to_analyse)
+		#res_unlock_keychain=os.popen('security unlock-keychain -p ' + keychain_pass + ' ' + current_path + '/' + keychain_to_analyse).read()
+		print res_unlock_keychain
 		
 		#valid password
 		if res_unlock_keychain == "":
-			data_keychain=os.popen("security dump-keychain -d " + current_path + "/" + keychain_to_analyse).read()
+			data_keychain=os.popen('security dump-keychain -d "' + current_path + '/' + keychain_to_analyse + '"').read()
 			file_keychain_decrypted=name_dir_analysis + keychain_name.replace(".keychain","_decrypted.txt")
 			#write keychain in clear into file
 			fct_writefile_del(data_keychain, file_keychain_decrypted)
@@ -2045,7 +2048,7 @@ def fct_brute_pass_keychain(dir_dump_keychain,keychain_name,all_passwords):
 	if check_found_pass != 1:
 		for i in range(len(all_passwords)):
 			keychain_to_analyse = dir_dump_keychain + keychain_name
-			res_unlock_keychain = commands.getoutput('security unlock-keychain -p "' + all_passwords[i].strip("\n").strip("\r")+ '" ' + current_path + '/' + keychain_to_analyse)
+			res_unlock_keychain = commands.getoutput('security unlock-keychain -p "' + all_passwords[i].strip("\n").strip("\r")+ '" "' + current_path + '/' + keychain_to_analyse + '"')
 
 			if res_unlock_keychain == "":
 				check_found_pass = 1
@@ -2413,7 +2416,7 @@ def fct_read_ios_sms(base_db,version_ios):
 		var_date_display = time.strftime('%y%m%d-%Hh%M%S',time.localtime())
 		output_display = name_dir_analysis + var_date_display + "_IOS_SMS-" + base_db + ".txt"
 		print_log("\nResults will be stored into " + output_display + "\n")
-		raw_input("ress enter to continue\n")
+		raw_input("Press enter to continue\n")
 
 		con = None
 		try:
@@ -2950,6 +2953,7 @@ def fct_mactime_catalogfile():
 	
 	var_date_display = time.strftime('%y%m%d-%Hh%M%S',time.localtime())
 	dir_consolidation = "../analysis/" + var_date_display + "_ConsoCatalogFile/"
+	dir_consolidation_b =  "analysis/" + var_date_display + "_ConsoCatalogFile/"
 
 	
 	ctg_file = ""
@@ -2986,7 +2990,7 @@ def fct_mactime_catalogfile():
 				os.makedirs(dir_consolidation)
 
 			os.system("./" + name_ahjp + " -c=" + ctg_file + " -j=" + jrn_file + " -v=" + vhf_file + " -o 0 -out=" + dir_consolidation)
-			print_red("Resultat are stored into " + dir_work + dir_consolidation + "\n")
+			print_red("Results are stored into " + dir_work + dir_consolidation_b + "\n")
 			os.chdir(current_cwd)
 	
 	else:

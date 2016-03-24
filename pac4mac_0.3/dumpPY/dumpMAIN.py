@@ -58,6 +58,7 @@ db_search_log = dir_db + 'logs.db'
 db_search_appli = dir_db + 'applications.db'
 db_search_persist = dir_db + 'persistence.db'
 db_search_trojans = dir_db + 'trojans.db'
+db_search_cert = dir_db + 'cert.db'
 db_search_artifact_user = dir_db + 'artifact_user.db'
 db_search_del_recover = dir_db + 'del_recover.db'
 db_search_hiberswap = dir_db + 'swap_hiber.db'
@@ -114,6 +115,10 @@ dir_dump_persist = dir_results + '/persistence_dump/'
 #trojans files
 file_log_trojans = dir_results + '/trojans_dump.txt'
 dir_dump_trojans = dir_results + '/trojans_dump/'
+
+#cert files
+file_log_cert = dir_results + '/cert_dump.txt'
+dir_dump_cert = dir_results + '/cert_dump/'
 
 #user files
 file_log_artifact_user = dir_results + '/artifact_user_dump.txt'
@@ -872,6 +877,9 @@ def fct_dump_by_target():
 	#dump trojan files
 	fct_dump_trojans()
 
+	#dump trojan files
+	fct_dump_cert()
+
 	#dump email spotlight
 	fct_dump_email_spot()
 
@@ -1599,6 +1607,14 @@ def fct_dump_trojans():
 	print_red_bold("\n[] Check If a Known Trojan Is Installed")
 	fct_dump_main(db_search_trojans,dir_dump_trojans,file_log_trojans)
 
+	###################################################################################################################################
+										     #[dump trusted cert]
+###################################################################################################################################
+
+def fct_dump_cert():
+	print_red_bold("\n[] Check trusted certificate")
+	fct_dump_main(db_search_cert,dir_dump_cert,file_log_cert)
+
 ###################################################################################################################################
 										     #[dump user config, recent files, ...]
 ###################################################################################################################################
@@ -1677,9 +1693,16 @@ def fct_check_os(var_version):
 	elif var_version == "13":
 		os_version = "Mavericks / 10.9"
 		return(os_version)
+	elif var_version == "14":
+		os_version = "Yosemite / 10.10"
+		return(os_version)
+	elif var_version == "15":
+		os_version = "El Capitan / 10.11"
+		return(os_version)
 	else:
 		print_red("\nUnsupported OS version.")
-		sys.exit()
+		os_version = "Unknown version"
+		return(os_version)
 
 
 ####################################################################################################################################
@@ -1878,6 +1901,8 @@ if mode != "LIAM" :
 	fct_dump_appli()
 	#dump trojan files
 	fct_dump_trojans()
+	#dump cert files
+	fct_dump_cert()
 	#dump user conf recent
 	fct_dump_artifact_user()
 	#deleted and recovered files

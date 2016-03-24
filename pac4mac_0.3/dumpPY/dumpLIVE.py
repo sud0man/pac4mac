@@ -380,9 +380,15 @@ elif var_version == "10":
 	os_version = "Snow Leopard / 10.6"
 elif var_version == "13":
 	os_version = "Mavericks / 10.9"
+elif var_version == "14":
+	os_version = "Yosemite / 10.10"
+elif var_version == "15":
+	os_version = "El Capitan / 10.11"
 else:
 	print_red("\nUnsupported OS version.")
-	sys.exit()
+	os_version = "Unknown version"
+
+
 
 
 

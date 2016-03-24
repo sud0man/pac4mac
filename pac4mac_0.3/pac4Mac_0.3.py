@@ -74,10 +74,12 @@ while var_attack != "q":
 	if var_version == "12" : print_log("launched from: Mountain Lion / 10.8 ")
 	elif var_version == "11" : print_log("launched from: Lion / 10.7")
 	elif var_version == "10" : print_log("launched from: Snow Leopard Mac OS X / 10.6 ")
-	elif var_version == "13" : print_red("launched from: Mavericks / 10.9 (not tested under this version)")
+	elif var_version == "13" : print_red("launched from: Mavericks / 10.9")
+	elif var_version == "14" : print_red("launched from: Yosemite / 10.10")
+	elif var_version == "15" : print_red("launched from: El Capitan / 10.11")
 	else: 
 		#print_red("\n\nUnsupported OS version.\n\n")
-		var_version = "13"
+		var_version = "15"
 		raw_input("\n\nOS not comptatible, features will be limited...\n\n")
 		#exit()
 
