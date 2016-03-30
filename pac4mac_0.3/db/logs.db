@@ -1,3 +1,4 @@
 #/var/log/system.log*, /var/log/appfirewall.log*, /var/log/install.log*, /var/log/system.log*, /var/log/kernel.log*
 [COPY_DIR][VAR_LOG]/private/var/log/
 [COPY_DIR][VAR_AUDIT]/var/audit/
+[COPY_DIR][FSEVENT]/.fseventsd/*

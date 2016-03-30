@@ -12,4 +12,21 @@
 
 #Last launched application (cache)
 [CMD][Cache_SOFT]ls -lshtr /Library/Caches/
-[CMD][Cache_SOFT_user]ls -lshtr /Users/<USER>/Library/Caches/
+[CMD_USER][Cache_SOFT_user]ls -lshtr /Users/<USER>/Library/Caches/
+
+#Sandboxed Applications
+[CMD_USER][Sandboxed_APP]stat /Users/<USER>/Library/Containers/
+[CMD_USER][Sandboxed_APP]ls -lshtr /Users/<USER>/Library/Containers/
+
+#Crash et Logs Applications
+[COPY_DIR_USER][Crash_PLIST]/Users/<USER>/Library/Application Support/CrashReporter/
+[COPY_DIR_USER][Log_APP]/Users/<USER>/Library/Logs/
+[COPY_FILE][Log_install]/var/log/install.log
+
+#Envrionment variables
+[CMD_USER][Environment]stat /Users/<USER>/.MacOSX/environment.plist
+[PLIST_USER][Environment]/Users/<USER>/.MacOSX/environment.plist
+[CMD][Launchd]stat /etc/launchd.conf
+[COPY_FILE][Launchd]/etc/launchd.conf
+[CMD][Launched_Agents_LIB_user]stat /Users>/<USER>/Library/LaunchAgents/*
+[COPY_DIR][Launched_Agents_LIB_user]/Users/<USER>/Library/LaunchAgents/
