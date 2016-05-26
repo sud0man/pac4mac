@@ -1,3 +1,8 @@
+#Installed Applications by pkg and Updates
+[CMD][Pkg_NAME]pkgutil --pkgs --volume /
+[CMD][Pkg_INFO]pkgutil --pkgs --volume / > /tmp/pkgutil.txt && while read pkg; do pkgutil --info "$pkg"; echo "@Installed pkg:$pkg"; done < /tmp/pkgutil.txt && rm /tmp/pkgutil.txt
+[CMD]Pkg_FILES]pkgutil --pkgs --volume / > /tmp/pkgutil.txt && while read pkg; do pkgutil --files "$pkg"; echo "@Installed pkg:$pkg"; done < /tmp/pkgutil.txt && rm /tmp/pkgutil.txt
+
 #History of installed applications and updates
 [CMD][Installed_SOFT_stat]stat /Library/Receipts/InstallHistory.plist
 [PLIST][Installed_SOFT]/Library/Receipts/InstallHistory.plist

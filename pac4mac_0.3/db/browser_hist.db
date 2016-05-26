@@ -1,6 +1,12 @@
 [COPY_FILE_USER_PROFILE][PLACES_FIREFOX]/Users/<USER>/Library/Application Support/Firefox/Profiles/<USERPROFILE>.default/places.sqlite
+#[COPY_DIR_USER_PROFILE][CACHES_FIREFOX]/Users/<USER>/Library/Caches/Firefox/Profiles/<USERPROFILE>.default/cache2/
+#[COPY_DIR_USER_PROFILE][CACHES_FIREFOX]/Users/<USER>/Library/Caches/Firefox/Profiles/<USERPROFILE>.default/cache/
+[COPY_FILE_USER][AUTOFILL_PASS_CHROME]/Users/<USER>/Library/Application Support/Firefox/Profiles/<USERPROFILE>.default/
 [COPY_FILE_USER][PLACES_CHROME]/Users/<USER>/Library/Application Support/Google/Chrome/Default/History
+[COPY_DIR_USER][CACHES_CHROME]/Users/<USER>/Library/Application Support/Google/Chrome/Default/Application Cache/Cache/
+[COPY_FILE_USER][AUTOFILL_PASS_CHROME]/Users/<USER>/Library/Application Support/Google/Chrome/Default/Login Data
 [COPY_FILE_USER][PLACES_SAFARI]/Users/<USER>/Library/Safari/History.plist
+[COPY_FILE_USER][CACHES_SAFARI]/Users/<USER>/Library/Caches/com.apple.Safari/Cache.db
 [COPY_FILE_USER][AUTOFILL_PASS_SAFARI]/Users/<USER>/Library/Safari/Form Values
 [COPY_FILE_USER][PLACES_OPERA]/Users/<USER>/Library/Opera/global_history.dat
 [COPY_FILE_USER][PLACES_OPERA]/Users/<USER>/Library/Application Support/com.operasoftware.Opera/History
