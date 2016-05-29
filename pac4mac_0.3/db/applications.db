@@ -11,9 +11,10 @@
 [CMD][Updated_SOFT_stat]stat /Library/Preferences/com.apple.SoftwareUpdate.plist
 [PLIST][Updated_SOFT]/Library/Preferences/com.apple.SoftwareUpdate.plist
 
-#All installed Application and association files
-[CMD][Bundle_SOFT-lsregsiter]/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -dump | grep --after-context 40 --before-context 1 "^bundle"
-[CMD][All_SOFT_lsregister]/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -dump -seed -all u,s,n,l
+#All bundle .app, mounted volume(containing .app) and association files (recorded by Launch Service)
+[CMD][lsregsiter_ALL]/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -dump
+[CMD][lsregsiter_VOLUME]/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -dump | grep --after-context 5 "^volume"
+[CMD][lsregsiter_APP]/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -dump | grep --after-context 40 --before-context 1 "^bundle"
 
 #Last launched application (cache)
 [CMD][Cache_SOFT]ls -lshtr /Library/Caches/
