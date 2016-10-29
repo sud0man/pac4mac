@@ -26,7 +26,6 @@
 
 #Crash et Logs Applications
 [COPY_DIR_USER][Crash_PLIST]/Users/<USER>/Library/Application Support/CrashReporter/
-[COPY_DIR_USER][Log_APP]/Users/<USER>/Library/Logs/
 [COPY_FILE][Log_install]/var/log/install.log
 
 #Environment variables
@@ -38,5 +37,6 @@
 [COPY_DIR][PKGMeta]/var/db/receipts/
 
 #Execution artefacts
-[COPY_FILE_USER][ApplicationRecentDocuments]/Users/<USER>/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments.sfl
+[CMD_USER][ApplicationRecentDocuments]stat /Users/<USER>/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/*
+[COPY_DIR_USER][ApplicationRecentDocuments]/Users/<USER>/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/
 [COPY_FILE_USER][RecentApplications]/Users/<USER>/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.RecentApplications.sfl

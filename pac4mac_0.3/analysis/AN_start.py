@@ -612,7 +612,7 @@ def fct_read_history(browser,output_display_history):
 			print_green("========================================================================")
 		
 	else: 
-		print_log("\n[\PLACES_" + browser + "] No " + browser + " History has been identified ...")
+		print_log("\n[\PLACES_" + browser + "] No " + browser + " History has been identified ... History.db (results/browser_dump/PLACES_SAFARI_<user>_History.db) are not still converted ... sorry :(")
 		print_green("========================================================================")
 
 
