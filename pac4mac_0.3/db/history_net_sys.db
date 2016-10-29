@@ -2,7 +2,7 @@
 #History network
 [PLIST][History_Bluetooth]/Library/Preferences/com.apple.Bluetooth.plist
 [PLIST][History_Network]/Library/Preferences/SystemConfiguration/com.apple.network.identification.plist
-[CMD][History_wifi_AP]defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences|sed 's|\./|`pwd`/|g' | sed 's|.plist||g'|grep 'LastConnected' -A 3
+[CMD][History_wifi_AP]defaults read /Library/Preferences/SystemConfiguration/com.apple.airport.preferences|sed 's|\./|`pwd`/|g' | sed 's|.plist||g'|grep 'LastConnected' -A 10
 [COPY_FILE][History_RemoteDesktop]/Library/Preferences/com.apple.RemoteDesktop.plist
 [COPY_DIR_USER][History_WebpagePreview]/Users/<USER>/Library/Caches/com.apple.Safari/Webpage Previews/
 

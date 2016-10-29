@@ -15,3 +15,9 @@
 [PLIST][Identity_1]/Library/Preferences/AddressBookMe.plist
 [PLIST_USER][Identity_2]/Users/<USER>/Library/Preferences/AddressBookMe.plist
 [COPY_FILE][Identity_3]/private/var/db/.AppleSetupDone
+
+#paramètre nvram (dont le mot de passe efi)
+[CMD][NVRAM_Param]nvram -p
+
+#SIP activé ou non (permet le chargement de drivers non signées si pas activée)
+[CMD][Csrutil_SIP]csrutil status

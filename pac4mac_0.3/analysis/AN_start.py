@@ -48,7 +48,7 @@ time_sec_to_jtr = "10"
 current_path = os.getcwd()
 
 #Checkout4Mac path
-CheckOut4Mac_path = 'tools/CheckOut4Mac/CheckOut4Mac_0.1.py'
+CheckOut4Mac_path = 'tools/CheckOut4Mac/chk4mac_0.2.py'
 
 #SLK and AHJP path
 path_to_mactime = 'tools/disk_utilities/mactime'
@@ -2508,7 +2508,7 @@ def fct_read_ios_calendar(base_db,version_ios):
 def fct_read_ios_call(base_db,version_ios):
 	print_red("\n     ==== Call history of " + base_db + "====\n")
 	base_path_call = dir_dump_ios + "IOS_CALL-" + base_db
-	db_file_call = base_path_call + "_ff1324e6b949111b2fb449ecddb50c89c3699a78"
+	db_file_call = base_path_call + "_2b2b0084a1bc3a5ac8c27afdf14afb42c61a19ca"
 	if os.path.isfile(db_file_call):
 		print_red("Please to open manually SQLite database:")
 		print_green(db_file_call + "\n")
@@ -2811,13 +2811,6 @@ def fct_convert_log():
 											#[CheckOut4Mac on log files]
 ####################################################################################################################################
 def fct_checkout4Mac_Log():
-	check_conf = raw_input("Please to check configuration of CheckOut4Mac.py (b to back, e to edit, any key to continue) > ")
-	if check_conf == "b": 
-		exit()
-	elif check_conf == "e": 
-		os.system("open " + CheckOut4Mac_path)
-		raw_input("Press any key to continue")
-
 
 	file=open(file_log_log,'r')
 	lines_log_log = file.readlines()
@@ -2838,13 +2831,12 @@ def fct_checkout4Mac_Log():
 
 			source_dir = dir_path + "/" + dir_name + "/"
 
-			if "AUDIT" in dir_name:
+			if "VAR_AUDIT" in dir_name:
 				dir_audit = source_dir
-			elif "LOG" in dir_name:
+			elif "VAR_LOG" in dir_name:
 				dir_system = source_dir
-				dir_syslog = source_dir + "asl/"
 
-	os.system("python " + CheckOut4Mac_path + " -L -l " + dir_system + " -s " + dir_syslog + " -b " + dir_audit)
+	os.system("python " + CheckOut4Mac_path + " -L -l " + dir_system + " -b " + dir_audit)
 
 
 
@@ -2960,6 +2952,7 @@ def fct_mactime_catalogfile():
 	jrn_file = ""
 	vhf_file = ""
 
+	print dir_results_catalogfile
 	if os.path.exists(dir_results_catalogfile):
 		for file in os.listdir(dir_results_catalogfile):
 			if ".ctg" in file:

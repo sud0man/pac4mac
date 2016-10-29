@@ -10,9 +10,12 @@
 #Desktop picture
 [PLIST_USER][Desktop_Pictures]/Users/<USER>/Library/Preferences/com.apple.desktop.plist
 
-#recent documents, applications, and network connections
-[PLIST_USER][Recents_DOC_APP_NET]/Users/<USER>/Library/Preferences/com.apple.recentitems.plist 
+#Recent items (documents, applications, and network connections)
+[PLIST_USER][Recents_Items]/Users/<USER>/Library/Preferences/com.apple.recentitems.plist 
 
 #Preview files
 [PLIST_USER][Preview_Documents]/Users/<USER>/Library/Preferences/com.apple.Preview.LSSharedFileList.plist
+
+#Recent Document 
+[COPY_FILE_USER][RecentDocument]/Users/<USER>/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.RecentDocuments.sfl
 

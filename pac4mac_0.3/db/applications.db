@@ -7,21 +7,21 @@
 [CMD][Installed_SOFT_stat]stat /Library/Receipts/InstallHistory.plist
 [PLIST][Installed_SOFT]/Library/Receipts/InstallHistory.plist
 
+
 #Last Software Update
 [CMD][Updated_SOFT_stat]stat /Library/Preferences/com.apple.SoftwareUpdate.plist
 [PLIST][Updated_SOFT]/Library/Preferences/com.apple.SoftwareUpdate.plist
 
 #All bundle .app, mounted volume(containing .app) and association files (recorded by Launch Service)
 [CMD][lsregsiter_ALL]/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -dump
-[CMD][lsregsiter_VOLUME]/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -dump | grep --after-context 5 "^volume"
-[CMD][lsregsiter_APP]/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -dump | grep --after-context 40 --before-context 1 "^bundle"
+[CMD][lsregsiter_APP]/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -dump | grep –A 35 "Container mount"
 
 #Last launched application (cache)
 [CMD][Cache_SOFT]ls -lshtr /Library/Caches/
 [CMD_USER][Cache_SOFT_user]ls -lshtr /Users/<USER>/Library/Caches/
 
 #Sandboxed Applications
-[CMD_USER][Sandboxed_APP]stat /Users/<USER>/Library/Containers/
+[CMD_USER][Sandboxed_APP]stat /Users/<USER>/Library/Containers/*
 [CMD_USER][Sandboxed_APP]ls -lshtr /Users/<USER>/Library/Containers/
 
 #Crash et Logs Applications
@@ -29,10 +29,14 @@
 [COPY_DIR_USER][Log_APP]/Users/<USER>/Library/Logs/
 [COPY_FILE][Log_install]/var/log/install.log
 
-#Envrionment variables
+#Environment variables
 [CMD_USER][Environment]stat /Users/<USER>/.MacOSX/environment.plist
 [PLIST_USER][Environment]/Users/<USER>/.MacOSX/environment.plist
-[CMD][Launchd]stat /etc/launchd.conf
-[COPY_FILE][Launchd]/etc/launchd.conf
-[CMD][Launched_Agents_LIB_user]stat /Users>/<USER>/Library/LaunchAgents/*
-[COPY_DIR][Launched_Agents_LIB_user]/Users/<USER>/Library/LaunchAgents/
+
+#Metadata of installed pkg installed (plist and bom)
+[CMD][PKGMeta]stat /var/db/receipts/*
+[COPY_DIR][PKGMeta]/var/db/receipts/
+
+#Execution artefacts
+[COPY_FILE_USER][ApplicationRecentDocuments]/Users/<USER>/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments.sfl
+[COPY_FILE_USER][RecentApplications]/Users/<USER>/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.RecentApplications.sfl

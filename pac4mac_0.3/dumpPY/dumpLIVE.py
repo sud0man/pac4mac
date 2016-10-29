@@ -34,7 +34,7 @@ file_dump_RAM_DMA = dir_path_RAM + '/RAM_memory.dmp'
 dir_path_osxpmem = 'tools/pmem/OSXPMem/'
 file_dump_RAM = '../../../' + dir_path_RAM + '/RAM_memory.dmp'
 
-CheckOut4Mac_path = 'tools/CheckOut4Mac/CheckOut4Mac_0.1.py'
+CheckOut4Mac_path = 'tools/CheckOut4Mac/chk4mac_0.2.py'
 
 #file log pac4mac 
 file_history_dest = dir_results + '/#log_pac4mac.txt'
@@ -272,15 +272,7 @@ def fct_Checkout4Mac():
 	fct_writefile(var_log, file_history_dest)
 
 	fct_writefile_del(os_version, file_version_dest)
-	print_green("\nOS detected > " + os_version )
-
-
-	check_conf = raw_input("Please to check configuration of CheckOut4Mac.py (b to back, e to edit, any key to continue) > ")
-	if check_conf == "b": 
-		exit()
-	elif check_conf == "e": 
-		os.system("open " + CheckOut4Mac_path)
-		raw_input("Press any key to continue")
+	print_green("\nOS detected > " + os_version)
 
 
 	os.system("python " + CheckOut4Mac_path)
@@ -384,6 +376,8 @@ elif var_version == "14":
 	os_version = "Yosemite / 10.10"
 elif var_version == "15":
 	os_version = "El Capitan / 10.11"
+elif var_version == "16":
+	os_version = "Sierra / 10.12"
 else:
 	print_red("\nUnsupported OS version.")
 	os_version = "Unknown version"

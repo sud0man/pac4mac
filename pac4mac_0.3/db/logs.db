@@ -2,3 +2,4 @@
 [COPY_DIR][VAR_LOG]/private/var/log/
 [COPY_DIR][VAR_AUDIT]/private/var/audit/
 [COPY_DIR][FSEVENT]/.fseventsd/
+[COPY_DIR_USER][USER_LOG]/Users/<USER>/Library/Logs/

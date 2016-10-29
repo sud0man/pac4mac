@@ -8,7 +8,8 @@
 #Last Login Info + Hint master password + autologin user
 [PLIST][Last_Login]/Library/Preferences/com.apple.loginwindow.plist
 
-
+#kerberos
+[CMD][Kerberos_list]klist
 
 
 

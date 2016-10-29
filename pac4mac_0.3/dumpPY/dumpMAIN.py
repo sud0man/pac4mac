@@ -420,7 +420,7 @@ def fct_dump_dir_user(var_search,var_path_dir,path_dest_dump,file_log_dump):
 			print_log("[" + var_search.upper() + "] Copy of > [" + var_path_db + "]")
 			if not os.path.isdir(path_dest_dump):
 				os.makedirs(path_dest_dump)
-			var_dir_dest = path_dest_dump + var_search
+			var_dir_dest = path_dest_dump + var_search + "=" + lines_username[k]
 
 			print_green("Copy of directory, be patient ...\n...\n...")
 			try:
@@ -1046,7 +1046,7 @@ def fct_dump_users_hashes() :
 		print_green("========================================================================")
 		fct_writefile(var_allusershashes,file_allusershashes)
 	
-	elif var_version == "12" or var_version == "13": 
+	else: 
 		#print_log("https://gist.github.com/3258894")
 		#print_log("http://www.artiflo.net/2009/08/pbkdf2-et-generation-des-cles-de-chiffrement-de-disque/")
 		file=open(file_userslist,'r')
@@ -1699,6 +1699,8 @@ def fct_check_os(var_version):
 	elif var_version == "15":
 		os_version = "El Capitan / 10.11"
 		return(os_version)
+	elif var_version == "16" :
+		os_version = "Sierra / 10.12"
 	else:
 		print_red("\nUnsupported OS version.")
 		os_version = "Unknown version"

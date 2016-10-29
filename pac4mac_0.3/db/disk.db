@@ -1,0 +1,7 @@
+[CMD][DiskArbitration]diskutil activity & sleep 5 && pkill diskutil
+[CMD][DiskList]diskutil list
+[CMD][DiskMounted]mount
+[CMD][DiskInfo]diskutil info disk0
+[CMD][DiskInfo]diskutil info disk0s1
+[CMD][DiskInfo]diskutil info disk0s2
+[CMD][DiskInfo]diskutil info disk0s3

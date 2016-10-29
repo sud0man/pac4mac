@@ -1,0 +1,3 @@
+[CMD][trusted_cert_user]security dump-trust-settings
+[CMD][trusted_cert_system]security dump-trust-settings -s
+[CMD][trusted_cert_admin]security dump-trust-settings -d

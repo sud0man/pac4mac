@@ -138,8 +138,8 @@
 [CMD][Malware_Okaz]stat /Library/Application\ Support/SIMBL/Plugins/SafariOmnibar.bundle
 [COPY_FILE[Malware_Okaz]/Library/Application\ Support/SIMBL/Plugins/SafariOmnibar.bundle
 
-[CMD][Malware_RSPLug]stat /Lubrary/Internet\ Plugins/Mozillplugin.plugin
-[COPY_FILE][Malware_RSPLug]stat /Lubrary/Internet\ Plugins/Mozillplugin.plugin
+[CMD][Malware_RSPLug]stat /Library/Internet\ Plugins/Mozillplugin.plugin
+[COPY_FILE][Malware_RSPLug]stat /Library/Internet\ Plugins/Mozillplugin.plugin
 
 [CMD][Malware_logKext]stat /Library/LaunchDaemons/logKext.plist
 [PLIST][Malware_logKext]/Library/LaunchDaemons/logKext.plist
@@ -181,3 +181,19 @@
 [CMD][Malware_XSLCMD]stat /var/db/.AccessibilityAPIEnabled
 [COPY_FILE][Malware_XSLCMD]/var/db/.AccessibilityAPIEnabled
 
+[CMD_USER][Malware_Mokes]stat /Users/<USER>/LibraryApp Store/storeuserd
+[COPY_FILE_USER][Malware_Mokes]/Users/<USER>/LibraryApp Store/storeuserd
+[CMD_USER][Malware_Mokes]stat /Users/<USER>/Library/com.apple.spotlight/SpotlightHelper
+[COPY_FILE_USER][Malware_Mokes]/Users/<USER>/Library/com.apple.spotlight/SpotlightHelper
+[CMD_USER][Malware_Mokes]stat /Users/<USER>/Dock/com.apple.dock.cache
+[COPY_FILE_USER][Malware_Mokes]/Users/<USER>/Dock/com.apple.dock.cache
+[CMD_USER][Malware_Mokes]stat /Users/<USER>/Skype/SkypeHelper
+[COPY_FILE_USER][Malware_Mokes]/Users/<USER>/Skype/SkypeHelper
+[CMD_USER][Malware_Mokes]stat /Users/<USER>/Library/Dropbox/DropboxCache
+[COPY_FILE_USER][Malware_Mokes]/Users/<USER>/Library/Dropbox/DropboxCache
+[CMD_USER][Malware_Mokes]stat /Users/<USER>/Library/Google/Chrome/nacld
+[COPY_FILE_USER][Malware_Mokes]/Users/<USER>/Library/Google/Chrome/nacld
+[CMD_USER][Malware_Mokes]stat /Users/<USER>/Library/Firefox/Profiles/profiled
+[COPY_FILE_USER][Malware_Mokes]/Users/<USER>/Library/Firefox/Profiles/profiled
+[CMD_USER][Malware_Mokes]stat /Users/<USER>/Library/LaunchAgents/$filename.plist
+[PLIST_USER][Malware_Mokes]/Users/<USER>/Library/LaunchAgents/$filename.plist

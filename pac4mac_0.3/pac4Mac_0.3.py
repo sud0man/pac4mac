@@ -77,6 +77,7 @@ while var_attack != "q":
 	elif var_version == "13" : print_red("launched from: Mavericks / 10.9")
 	elif var_version == "14" : print_red("launched from: Yosemite / 10.10")
 	elif var_version == "15" : print_red("launched from: El Capitan / 10.11")
+	elif var_version == "16" : print_red("launched from: Sierra / 10.12")
 	else: 
 		#print_red("\n\nUnsupported OS version.\n\n")
 		var_version = "15"
