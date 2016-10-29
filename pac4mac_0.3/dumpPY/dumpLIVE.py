@@ -275,7 +275,7 @@ def fct_Checkout4Mac():
 	print_green("\nOS detected > " + os_version)
 
 
-	os.system("python " + CheckOut4Mac_path)
+	os.system("sudo python " + CheckOut4Mac_path)
 
 ############################################
 
