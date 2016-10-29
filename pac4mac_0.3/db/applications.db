@@ -37,6 +37,6 @@
 [COPY_DIR][PKGMeta]/var/db/receipts/
 
 #Execution artefacts
-[CMD_USER][ApplicationRecentDocuments]stat /Users/<USER>/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/*
+[CMD_USER][ApplicationRecentDocuments]stat /Users/<USER>/Library/Application\ Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/*
 [COPY_DIR_USER][ApplicationRecentDocuments]/Users/<USER>/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/
 [COPY_FILE_USER][RecentApplications]/Users/<USER>/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.RecentApplications.sfl
