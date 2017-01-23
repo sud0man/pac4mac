@@ -1701,6 +1701,7 @@ def fct_check_os(var_version):
 		return(os_version)
 	elif var_version == "16" :
 		os_version = "Sierra / 10.12"
+		return(os_version)
 	else:
 		print_red("\nUnsupported OS version.")
 		os_version = "Unknown version"
