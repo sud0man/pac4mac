@@ -117,7 +117,6 @@
 [CMD][Malware_Renepo]stat /System/Library/StartupIems/$scriptname/$scriptname
 [COPY_FILE][Malware_Renepo]/System/Library/StartupIems/$scriptname/$scriptname
 
-[Malware_IceFog]
 [CMD_USER][Malware_IceFog]stat /Users/<USER>/.launchd.app
 [COPY_DIR_USER][Malware_IceFog]/Users/<USER>/.launchd.app
 [CMD_USER][Malware_IceFog]stat /Users/<USER>/Library/LaunchAgents/apple.launchd.plist
@@ -197,3 +196,60 @@
 [COPY_FILE_USER][Malware_Mokes]/Users/<USER>/Library/Firefox/Profiles/profiled
 [CMD_USER][Malware_Mokes]stat /Users/<USER>/Library/LaunchAgents/$filename.plist
 [PLIST_USER][Malware_Mokes]/Users/<USER>/Library/LaunchAgents/$filename.plist
+
+[CMD][Malware_Komplex]stat /Users/Shared/.local/kextd
+[CMD_USER][Malware_Komplex]stat /Users/<USER>/Library/LaunchAgents/com.apple.updates.plist
+[CMD_USER][Malware_Komplex]stat /Users/<USER>/Library/Assistants/.local/.localized/
+[CMD_USER][Malware_Komplex]stat /Users/<USER>/Library/Assistants/.local/.com.apple.kshd/
+[CMD_USER][Malware_Komplex]stat /Users/<USER>/Library/Assistants/.local/.com.apple.erx/
+[CMD_USER][Malware_Komplex]stat /Users/<USER>/Library/Assistants/.local/.com.apple.fsg/
+[CMD_USER][Malware_Komplex]stat /Users/<USER>/Library/Assistants/.local/.com.apple.ulk/
+[CMD_USER][Malware_Komplex]stat /Users/<USER>/Library/Assistants/.local/.com.apple.wsat/
+[CMD_USER][Malware_Komplex]stat /Users/<USER>/Library/Assistants/.local/.com.apple.sksh/
+[CMD_USER][Malware_Komplex]stat /Users/<USER>/Library/Assistants/.local/.com.apple.ulkg/
+[CMD_USER][Malware_Komplex]stat /Users/<USER>/Library/Assistants/.local/.com.apple.updater/
+[COPY_FILE][Malware_Komplex]/Users/Shared/.local/kextd
+[COPY_FILE_USER][Malware_Komplex]/Users/<USER>/Library/LaunchAgents/com.apple.updates.plist
+[COPY_DIR_USER][Malware_Komplex]/Users/<USER>/Library/Assistants/.local/.localized/
+[COPY_DIR_USER][Malware_Komplex]/Users/<USER>/Library/Assistants/.local/.com.apple.kshd/
+[COPY_DIR_USER][Malware_Komplex]/Users/<USER>/Library/Assistants/.local/.com.apple.erx/
+[COPY_DIR_USER][Malware_Komplex]/Users/<USER>/Library/Assistants/.local/.com.apple.fsg/
+[COPY_DIR_USER][Malware_Komplex]/Users/<USER>/Library/Assistants/.local/.com.apple.ulk/
+[COPY_DIR_USER][Malware_Komplex]/Users/<USER>/Library/Assistants/.local/.com.apple.wsat/
+[COPY_DIR_USER][Malware_Komplex]/Users/<USER>/Library/Assistants/.local/.com.apple.sksh/
+[COPY_DIR_USER][Malware_Komplex]/Users/<USER>/Library/Assistants/.local/.com.apple.ulkg/
+[COPY_DIR_USER][Malware_Komplex]/Users/<USER>/Library/Assistants/.local/.com.apple.updater/
+
+[CMD][Malware_KeRanger]stat /Users/<USER>/Library/kernel_*
+[COPY_FILE_USER][Malware_KeRanger]/Users/<USER>/Library/kernel_*
+
+[CMD_USER][Malware_Eleanor]stat /Users/<USER>/Library/.dropbox/
+[CMD_USER][Malware_Eleanor]stat /Users/<USER>/Library/LaunchAgents/com.getdropbox.dropbox.usercontent.plist
+[CMD_USER][Malware_Eleanor]stat /Users/<USER>/Library/LaunchAgents/com.getdropbox.dropbox.integritycheck.plist
+[CMD_USER][Malware_Eleanor]stat /Users/<USER>/Library/LaunchAgents/com.getdropbox.dropbox.timegrabber.plist
+[COPY_DIR_USER][Malware_Eleanor]/Users/<USER>/Library/.dropbox/
+[COPY_FILE_USER][Malware_Eleanor]/Users/<USER>/Library/LaunchAgents/com.getdropbox.dropbox.usercontent.plist
+[COPY_FILE_USER][Malware_Eleanor]/Users/<USER>/Library/LaunchAgents/com.getdropbox.dropbox.integritycheck.plist
+[COPY_FILE_USER][Malware_Eleanor]/Users/<USER>/Library/LaunchAgents/com.getdropbox.dropbox.timegrabber.plist
+
+[CMD][Malware_Keydnap]stat /Library/LaunchAgents/LaunchAgentscom.apple.iCloud.sync.daemon.plist
+[CMD_USER][Malware_Keydnap]stat /Users/<USER>/Library/LaunchAgentscom.apple.iCloud.sync.daemon.plist
+[CMD][Malware_Keydnap]stat /Library/LaunchAgents/com.geticloud.icloud.photo.plist
+[CMD_USER][Malware_Keydnap]stat /Users/<USER>/Library/com.geticloud.icloud.photo.plist
+[CMD_USER][Malware_Keydnap]stat /Users/<USER>/Library/Application\ Support/com.apple.iCloud.sync.daemon/
+[CMD_USER][Malware_Keydnap]stat /Users/<USER>/Library/Application\ Support/com.geticloud/
+[COPY_FILE][Malware_Keydnap]/Library/LaunchAgents/LaunchAgentscom.apple.iCloud.sync.daemon.plist
+[COPY_FILE_USER][Malware_Keydnap]/Users/<USER>/Library/LaunchAgentscom.apple.iCloud.sync.daemon.plist
+[COPY_USER][Malware_Keydnap]/Library/LaunchAgents/com.geticloud.icloud.photo.plist
+[COPY_FILE_USER][Malware_Keydnap]/Users/<USER>/Library/com.geticloud.icloud.photo.plist
+[COPY_DIR_USER][Malware_Keydnap]/Users/<USER>/Library/Application\ Support/com.apple.iCloud.sync.daemon/
+[COPY_DIR_USER][Malware_Keydnap]/Users/<USER>/Library/Application\ Support/com.geticloud/
+
+[CMD_USER][Malware_MacSpy]stat /Users/<USER>/Library/.DS_Stores/updated
+[COPY_FILE_USER][Malware_MacSpy]/Users/<USER>/Library/.DS_Stores/updated
+[CMD_USER][Malware_MacSpy]stat /Users/<USER>/Library/.DS_Stores/data
+[COPY_DIR_USER][Malware_MacSpy]/Users/<USER>/Library/.DS_Stores/data/
+[CMD][Malware_MacSpy]stat /Library/LaunchAgents/com.apple.webkit.plist
+[CMD_USER][Malware_MacSpy]stat /Users/<USER>/Library/com.apple.webkit.plist
+[COPY_FILE][Malware_MacSpy]/Library/LaunchAgents/com.apple.webkit.plist
+[COPY_FILE_USER][Malware_MacSpy]/Users/<USER>/Library/com.apple.webkit.plist
