@@ -78,4 +78,7 @@
 [CMD_USER][FirefoxPlugIn]stat /Users/<USER>/Library/Application Support/Mozilla/Extensions/*
 [COPY_DIR_USER][FirefoxPlugIn]/Users/<USER>/Library/Application Support/Mozilla/Extensions/
 
-
+[CMD][EmondRule]stat /etc/emond.d/rules/*
+[COPY_DIR][EmondRule]/etc/emond.d/rules/
+[CMD][EmondConf]stat /etc/emond.d/emond.plist
+[COPY_FILE][EmondConf]/etc/emond.d/emond.plist
