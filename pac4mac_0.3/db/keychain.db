@@ -1,4 +1,5 @@
 [COPY_FILE_USER][KEYCHAIN_USER]/Users/<USER>/Library/Keychains/login.keychain
+[COPY_FILE_USER][KEYCHAIN_USER2]/Users/<USER>/Library/Keychains/login.keychain-db
 [COPY_FILE][KEYCHAIN_SYSTEM]/Library/Keychains/FileVaultMaster.keychain
 [COPY_FILE][KEYCHAIN_SYSTEM]/Library/Keychains/System.keychain
 [COPY_FILE][KEYCHAIN_SYSTEM]/Library/Keychains/applepushserviced.keychain
