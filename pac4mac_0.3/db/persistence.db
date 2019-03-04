@@ -1,4 +1,4 @@
-[CMD][Launched_XPC_APPLI]find /Applications/ -name XPCServices -exec ls -lsct {} \;
+[CMD][Launched_XPC_APPLI]find /Applications/ -name XPCServices -exec ls -lRsct {} \;
 
 [CMD][Launched_XPC_SYS]stat /System/Library/XPCServices/*
 [COPY_DIR][Launched_XPC_SYS]/System/Library/XPCServices/
@@ -35,6 +35,7 @@
 [CMD][Drivers_ALL]kextstat
 
 [CMD][Extensions_DIR]stat /System/Library/Extensions/*
+[CMD][Extensions_DIR1]stat /Library/Extensions/*
 [CMD][Extensions_DIR2]stat /Extra/Extensions/*
 [COPY_DIR][Extensions.KextCache]/System/Library/Extensions/Extensions.kexstat/
 [COPY_FILE][Extensions_installed_cache]/System/Library/Extensions/Extensions.mkext

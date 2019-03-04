@@ -378,6 +378,10 @@ elif var_version == "15":
 	os_version = "El Capitan / 10.11"
 elif var_version == "16":
 	os_version = "Sierra / 10.12"
+elif var_version == "17":
+        os_version = "High Sierra / 10.13"
+elif var_version == "18":
+        os_version = "Mojave / 10.14"
 else:
 	print_red("\nUnsupported OS version.")
 	os_version = "Unknown version"

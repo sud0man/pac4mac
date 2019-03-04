@@ -11,6 +11,8 @@
 [COPY_FILE_USER][History_SQLiteHistory]/Users/<USER>/.sqlite_history
 [COPY_FILE_USER][History_Bash]/Users/<USER>/.bash_history
 [COPY_FILE_USER][History_sh]/Users/<USER>/.sh_history
+[CMD_USER][History_bash_sessions]stat /Users/<USER>/.bash_sessions/*
+[COPY_DIR_USER][History_bash_sessions]/Users/<USER>/.bash_sessions/
 [CMD][History_Console_last]last
 [COPY_FILE_USER][History_Connected_Media]/Users/<USER>/Library/Preferences/com.apple.sidebarlists.plist
 
